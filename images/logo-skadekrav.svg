@@ -1,0 +1,10 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">skadekrav.no logo</title>
+  <desc id="desc">Stilisert skjold med et lite hus inni, i mørk blå farge.</desc>
+  <g fill="none" stroke="#0f2b5b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 6 L52 14 V30 C52 43 43 53 32 58 C21 53 12 43 12 30 V14 Z"/>
+    <path d="M24 36 V29 L32 22 L40 29 V36"/>
+    <path d="M29 36 V31 H35 V36"/>
+    <path d="M23 36 H41"/>
+  </g>
+</svg>

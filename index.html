@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>skadekrav.no | Hjelp med forsikringskrav og skadeoppgjør bolig</title>
+  <meta name="description" content="Har du fått avslag eller for lav utbetaling fra forsikringen etter vannskade, stormskade eller annen boligskade? Vi vurderer skadekravet ditt gratis og hjelper deg få det du har rett på.">
+  <meta name="keywords" content="vannskade forsikring, forsikring avslag, klage forsikringsoppgjør, for lav utbetaling forsikring, hjelp forsikringssak bolig, følgeskade forsikring, lekkasje oppvaskmaskin forsikring, skadekrav bolig">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://skadekrav.no/">
+  <meta property="og:title" content="Skadekrav.no – Hjelp med forsikringskrav ved boligskade">
+  <meta property="og:description" content="Har du fått avslag eller for lav utbetaling? Vi vurderer saken gratis og hjelper deg få det du har krav på.">
+  <meta property="og:url" content="https://skadekrav.no/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nb_NO">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Skadekrav.no","description":"Hjelp med forsikringskrav og skadeoppgjør ved boligskader i Norge","url":"https://skadekrav.no","areaServed":"Norway","serviceType":"Forsikringskrav og skadeoppgjør","priceRange":"30% provisjon ved vellykket oppgjør","availableLanguage":"Norwegian"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Dekker forsikringen vannskade i gulv og parkett?","acceptedAnswer":{"@type":"Answer","text":"Mange vannskader kan være dekket hvis skaden oppstod plutselig. Forsikringsselskapet behandler ofte lekkasjen og følgeskadene som to separate skader — begge kan gi rett til erstatning."}},{"@type":"Question","name":"Hva gjør jeg hvis forsikringen har gitt for lav utbetaling?","acceptedAnswer":{"@type":"Answer","text":"Hvis oppgjøret er lavere enn kostnaden for å reparere skaden, kan det være grunnlag for å klage. Vi vurderer gratis om du har krav på mer."}},{"@type":"Question","name":"Kan jeg klage på forsikringsoppgjøret?","acceptedAnswer":{"@type":"Answer","text":"Ja. Du har rett til å klage. Vi hjelper deg — du betaler kun hvis vi lykkes."}},{"@type":"Question","name":"Hva koster det?","acceptedAnswer":{"@type":"Answer","text":"Vurderingen er alltid gratis. Får vi gjennomslag, er provisjonen 30 prosent. Lykkes vi ikke, betaler du ingenting."}}]}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page { display: none; }
+    .page.active { display: block; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar" role="banner" aria-label="Fordeler">
+    <span>✓ Gratis vurdering</span>
+    <span>✓ Svar innen 48 timer</span>
+    <span>✓ Ingen betaling uten utbetaling</span>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="logo" href="#" onclick="showPage('forside'); return false;" aria-label="Til forsiden">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="#d97706"/>
+        </svg>
+        <span>skadekrav.no</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Meny</button>
+      <nav id="main-menu" class="main-nav" aria-label="Hovedmeny">
+        <a href="#" onclick="showPage('forside'); scrollTo('krav'); return false;">Vurdering</a>
+        <a href="#" onclick="showPage('forside'); scrollTo('slik'); return false;">Slik fungerer det</a>
+        <a href="#" onclick="showPage('om-oss'); return false;">Om oss</a>
+        <a href="#" onclick="showPage('forside'); scrollTo('kontakt'); return false;">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== FORSIDE ===== -->
+  <div id="page-forside" class="page active">
+    <main>
+
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="hero-kicker">Gratis vurdering — ingen risiko</p>
+            <h1>Fikk du riktig oppgjør etter skaden?</h1>
+            <p class="lead">Vi vurderer gratis om forsikringen skal dekke mer — og tar betalt kun hvis vi vinner frem.</p>
+            <div class="cta-group">
+              <a class="btn js-cta-primary" href="#" onclick="scrollTo('kontakt'); return false;">Sjekk saken gratis</a>
+              <a class="btn btn-ghost" href="#" onclick="scrollTo('slik'); return false;">Slik fungerer det</a>
+            </div>
+            <div class="trust-line" aria-label="Trygghetsinformasjon">
+              <span>&#9733; Anbefalt av 200+ boligeiere</span>
+              <span>Svar innen 48 timer</span>
+              <span>Ingen betaling uten utbetaling</span>
+            </div>
+          </div>
+          <figure class="hero-image-wrap">
+            <div class="hero-split" role="img" aria-label="Parkettgulv skadet av vann til venstre, renovert rom til høyre">
+              <div class="hero-split-half">
+                <img src="images/hero-parkett-vannskade.jpg" alt="Skadet parkettgulv før utbedring" loading="eager">
+                <span class="hero-split-badge foer">Før</span>
+              </div>
+              <div class="hero-split-divider" aria-hidden="true"></div>
+              <div class="hero-split-half">
+                <img src="images/resultat-kjokken.jpg" alt="Renovert rom etter forsikringsoppgjør" loading="eager">
+                <span class="hero-split-badge etter">Etter</span>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section section-stats">
+        <div class="container stats-grid">
+          <div class="stat">
+            <span class="stat-num">70 000</span>
+            <span class="stat-label">vannskader meldes i Norge hvert år</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">60 000 kr</span>
+            <span class="stat-label">gjennomsnittlig utbedringskostnad</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">0 kr</span>
+            <span class="stat-label">betaler du hvis saken ikke fører frem</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="slik">
+        <div class="container">
+          <h2>Slik fungerer det</h2>
+          <div class="steps four">
+            <article class="step">
+              <span class="step-num">1</span>
+              <p>Du sender inn saken med en kort beskrivelse og eventuelle bilder eller dokumenter.</p>
+            </article>
+            <article class="step">
+              <span class="step-num">2</span>
+              <p>En erfaren rådgiver går gjennom dokumentasjonen og vurderer potensialet i saken.</p>
+            </article>
+            <article class="step">
+              <span class="step-num">3</span>
+              <p>Du får svar innen 48 timer på om saken kan følges opp videre.</p>
+            </article>
+            <article class="step">
+              <span class="step-num">4</span>
+              <p>Du betaler kun dersom saken fører til utbetaling.</p>
+            </article>
+          </div>
+          <aside class="payment-box" aria-label="Betalingsinformasjon">
+            <h3>Slik betaler du</h3>
+            <p>Du betaler kun dersom vi får gjennomslag i saken.</p>
+            <p>Vår provisjon er 30 prosent av utbetalingen — av det ekstra vi henter inn for deg.</p>
+            <p>Hvis saken ikke fører frem betaler du ingenting.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="krav">
+        <div class="container narrow">
+          <h2>Vannskader og andre skader som kan gi rett til høyere utbetaling</h2>
+          <p>En del vannskader og andre skader på bolig eller eiendom blir aldri meldt til forsikringen. Andre ganger gir forsikringsselskapet et oppgjør som er lavere enn det skaden faktisk koster å reparere — uten at du vet at du kan klage.</p>
+          <p>Forsikringsselskaper behandler ofte lekkasjen og følgeskadene separat. Det betyr at du kan ha krav på erstatning for skader du ikke visste var dekket.</p>
+          <p>Dette ser vi ofte i saker som gjelder:</p>
+          <ul class="event-list">
+            <li>Vannskade som ødelegger parkett, gulv eller vegg</li>
+            <li>Lekkasje fra oppvaskmaskin, varmtvannsbereder eller vaskemaskin</li>
+            <li>Tre som blåser ned på tomt, terrasse eller tak</li>
+            <li>Forsikringsoppgjør som virker for lavt</li>
+            <li>Avslag på forsikringskrav du mener burde vært dekket</li>
+            <li>Skader som ikke ble meldt inn da de oppstod</li>
+          </ul>
+          <img src="images/stormskade.jpg" alt="Stormskade — tre veltet over terrasse" loading="lazy" class="krav-storm-img">
+          <p>Vi vurderer gratis om saken bør følges opp videre.</p>
+        </div>
+      </section>
+
+      <section class="section" id="passer-best">
+        <div class="container narrow">
+          <h2>Når passer tjenesten vår best</h2>
+          <p>Tjenesten passer best i saker der:</p>
+          <ul class="event-list">
+            <li>Skaden gjelder bolig eller eiendom</li>
+            <li>Skaden oppstod plutselig, som vannlekkasje eller storm</li>
+            <li>Forsikringsselskapet har gitt avslag eller lav utbetaling</li>
+            <li>Skaden ikke ble meldt, men reparasjonen ble kostbar</li>
+            <li>Du har bilder, takst, faktura eller annen dokumentasjon</li>
+          </ul>
+          <p>Mindre skader ligger ofte nær egenandelen i forsikringen. Vi prioriterer derfor normalt saker der kostnaden for å reparere skaden er over 70 000 kroner.</p>
+          <p>Er du usikker, kan du likevel sende inn saken for en gratis vurdering.</p>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="kundehistorier">
+        <div class="container">
+          <h2>Hva sier kundene våre</h2>
+          <p class="section-lead">Reelle historier fra boligeiere vi har hjulpet.</p>
+          <div class="testimonials-grid">
+            <article class="testimonial-card">
+              <blockquote>Forsikringsselskapet tilbød 45 000 kr for parketten. Etter hjelp fra skadekrav.no fikk vi 180 000 kr — mer enn nok til full renovering.</blockquote>
+              <footer>
+                <strong>Kari Olsen</strong>
+                <span>Oslo</span>
+              </footer>
+            </article>
+            <article class="testimonial-card">
+              <blockquote>Trodde saken var tapt etter avslaget fra forsikringen. De oppdaget at avslaget ikke var begrunnet riktig, og vi fikk til slutt full dekning.</blockquote>
+              <footer>
+                <strong>Petter Andersen</strong>
+                <span>Bergen</span>
+              </footer>
+            </article>
+            <article class="testimonial-card">
+              <blockquote>Oppvaskmaskinen lakk i over ett år før vi oppdaget skaden bak kjøkkeninnredningen. Skadekrav.no hjalp oss å dokumentere saken og vi fikk 95 000 kr.</blockquote>
+              <footer>
+                <strong>Lise og Tor Haugen</strong>
+                <span>Trondheim</span>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="foer-etter">
+        <div class="container">
+          <h2>Før og etter</h2>
+          <p class="section-lead">Se hva riktig oppgjør kan bety for din bolig.</p>
+          <div class="foer-etter-grid">
+            <div class="foer-etter-pair">
+              <div class="foer-etter-col">
+                <span class="foer-etter-label foer">Før</span>
+                <img src="images/fuktskade-bad.jpeg" alt="Fuktskade på bad" loading="lazy">
+              </div>
+              <div class="foer-etter-col">
+                <span class="foer-etter-label etter">Etter</span>
+                <img src="images/resultat-bad.jpg" alt="Bad etter utbedring" loading="lazy">
+              </div>
+            </div>
+            <div class="foer-etter-pair">
+              <div class="foer-etter-col">
+                <span class="foer-etter-label foer">Før</span>
+                <img src="images/demontert-kjokken-vannskade.jpeg" alt="Kjøkken demontert etter vannskade" loading="lazy">
+              </div>
+              <div class="foer-etter-col">
+                <span class="foer-etter-label etter">Etter</span>
+                <img src="images/resultat-kjokken.jpg" alt="Kjøkken etter utbedring" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="kontakt">
+        <div class="container contact-grid">
+          <div>
+            <h2>Send inn saken</h2>
+            <p class="form-speed">Det tar under 2 minutter å sende inn saken.</p>
+            <p>Beskriv hva som skjedde, når skaden skjedde og hva du har av bilder eller faktura. Vi svarer normalt innen 48 timer.</p>
+            <p class="privacy-link">Gratis vurdering. Ingen betaling hvis saken ikke fører frem.</p>
+          </div>
+          <form action="https://formspree.io/f/xgonvdrz" method="POST" enctype="multipart/form-data" id="claim-form" class="form-card">
+            <div class="form-progress-wrap" aria-hidden="true">
+              <div class="form-progress-bar" id="form-progress-bar"></div>
+            </div>
+            <p class="form-step-counter" id="form-step-counter" aria-live="polite">Steg 1 av 8</p>
+
+            <div class="form-step" data-step="1">
+              <p class="step-question">Hva gjelder saken?</p>
+              <label for="caseType" class="sr-only">Hva gjelder saken?</label>
+              <select id="caseType" name="hva_gjelder_saken" required>
+                <option value="">Velg</option>
+                <option>Vannskade i bolig</option>
+                <option>Skade på kjøkken eller bad</option>
+                <option>Elektrisk skade eller overspenning</option>
+                <option>Stormskade på tomt eller bolig</option>
+                <option>Annen boligskade</option>
+              </select>
+            </div>
+
+            <div class="form-step" data-step="2">
+              <p class="step-question">Har du meldt skaden til forsikring?</p>
+              <label for="reportedToInsurance" class="sr-only">Har du meldt skaden til forsikring?</label>
+              <select id="reportedToInsurance" name="meldt_til_forsikring" required>
+                <option value="">Velg</option>
+                <option>Nei</option>
+                <option>Ja</option>
+                <option>Usikker</option>
+              </select>
+            </div>
+
+            <div class="form-step" data-step="3">
+              <p class="step-question">Hva er status på saken?</p>
+              <label for="caseStatus" class="sr-only">Hva er status på saken?</label>
+              <select id="caseStatus" name="saksstatus" required>
+                <option value="">Velg</option>
+                <option>Ikke meldt ennå</option>
+                <option>Fått avslag</option>
+                <option>Fått oppgjør som virker for lavt</option>
+                <option>Saken er under behandling</option>
+                <option>Usikker</option>
+              </select>
+            </div>
+
+            <div class="form-step" data-step="4">
+              <p class="step-question">Har du fått et oppgjør eller tilbud fra forsikringsselskapet?</p>
+              <label for="insuranceOffer" class="sr-only">Har du fått et oppgjør eller tilbud?</label>
+              <select id="insuranceOffer" name="oppgjor_eller_tilbud" required>
+                <option value="">Velg</option>
+                <option>Ja</option>
+                <option>Nei</option>
+                <option>Usikker</option>
+              </select>
+            </div>
+
+            <div class="form-step" data-step="5">
+              <p class="step-question">Hva tror du det vil koste å reparere skaden?</p>
+              <label for="damageSize" class="sr-only">Hva tror du det vil koste?</label>
+              <select id="damageSize" name="skadestorrelse" required>
+                <option value="">Velg</option>
+                <option>0 til 70 000</option>
+                <option>70 000 til 150 000</option>
+                <option>150 000 til 500 000</option>
+                <option>Over 500 000</option>
+                <option>Usikker</option>
+              </select>
+              <p id="small-claim-note" class="field-note" hidden>Mindre skader ligger ofte nær egenandelen i forsikringen. De fleste sakene vi prioriterer ligger over 70 000 kroner. Du kan likevel sende inn saken hvis du er usikker.</p>
+            </div>
+
+            <div class="form-step" data-step="6">
+              <p class="step-question">Har du bilder, takst, faktura eller annen dokumentasjon?</p>
+              <label for="hasDocs" class="sr-only">Har du dokumentasjon?</label>
+              <select id="hasDocs" name="dokumentasjon_status" required>
+                <option value="">Velg</option>
+                <option>Ja</option>
+                <option>Nei</option>
+                <option>Delvis</option>
+              </select>
+            </div>
+
+            <div class="form-step" data-step="7">
+              <p class="step-question">Dine kontaktopplysninger</p>
+              <label for="name">Navn</label>
+              <input id="name" name="navn" type="text" required>
+              <label for="phone">Telefon</label>
+              <input id="phone" name="telefon" type="tel" inputmode="tel" required>
+              <label for="email">E-post</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+
+            <div class="form-step" data-step="8">
+              <p class="step-question">Beskriv skaden kort</p>
+              <label for="message">Hva skjedde, og hva fikk du eventuelt tilbud om?</label>
+              <textarea id="message" name="beskrivelse" rows="4" required></textarea>
+              <label for="dokument">Last opp bilde eller filer (valgfritt)</label>
+              <input id="dokument" name="dokument" type="file" accept="image/*,.pdf,.doc,.docx" multiple>
+              <label class="check-label">
+                <input id="consent" name="consent" type="checkbox" required>
+                Jeg samtykker til at opplysningene brukes til vurdering av saken og at jeg kan kontaktes på oppgitt telefon og e-post.
+              </label>
+              <p class="privacy-link">Les <a href="#" onclick="showPage('personvern'); return false;">personvernerklæring</a>.</p>
+            </div>
+
+            <input type="hidden" id="priorityLevel" name="prioritet_internt" value="Normal">
+
+            <div class="form-nav">
+              <button type="button" class="btn btn-ghost" id="form-prev" hidden>Tilbake</button>
+              <button type="button" class="btn" id="form-next">Neste &rarr;</button>
+              <button type="submit" class="btn" id="form-submit" hidden>Send saken</button>
+            </div>
+
+            <p class="form-trust">Gratis vurdering. Ingen betaling hvis saken ikke fører frem.</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container narrow">
+          <h2>Vanlige spørsmål om skade og forsikring</h2>
+          <h3>Dekker forsikringen vannskade i gulv og parkett?</h3>
+          <p>Mange vannskader i bolig kan være dekket hvis skaden oppstod plutselig. Forsikringsselskapet behandler ofte selve lekkasjen og følgeskadene som to separate skader — begge kan gi rett til erstatning.</p>
+          <h3>Hva gjør jeg hvis forsikringen har gitt for lav utbetaling?</h3>
+          <p>Hvis oppgjøret er lavere enn kostnaden for å reparere skaden, kan det være grunnlag for å klage. Send inn saken til oss, så vurderer vi gratis om du har krav på mer.</p>
+          <h3>Kan jeg klage på forsikringsoppgjøret?</h3>
+          <p>Ja. Du har rett til å klage på forsikringsoppgjøret. Vi hjelper deg med å vurdere om saken har grunnlag og bistår deg gjennom prosessen — du betaler kun hvis vi lykkes.</p>
+          <h3>Kan jeg sende inn en sak som ikke ble meldt med en gang?</h3>
+          <p>Ja, i noen tilfeller kan saken fortsatt vurderes selv om den ikke ble meldt umiddelbart. Det er særlig aktuelt hvis du har bilder, faktura eller annen dokumentasjon på skaden.</p>
+          <h3>Hvilke saker hjelper skadekrav.no med?</h3>
+          <p>Vi hjelper med saker som gjelder vannskade, stormskade, andre boligskader, for lav utbetaling fra forsikring, og skader som ikke ble meldt inn da de oppstod. Vi prioriterer saker der utbedringskostnaden er over 70 000 kroner.</p>
+          <h3>Hva koster det å bruke skadekrav.no?</h3>
+          <p>Vurderingen er alltid gratis. Hvis vi tar saken videre og får gjennomslag, er vår provisjon 30 prosent av utbetalingen. Får vi ikke gjennomslag, betaler du ingenting.</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ===== OM OSS ===== -->
+  <div id="page-om-oss" class="page">
+    <main>
+      <section class="section">
+        <div class="container narrow">
+          <h1>Om skadekrav.no</h1>
+          <p class="lead">Vi er ikke advokater. Vi er ikke et forsikringsselskap. Vi er vanlige folk som har lært systemet å kjenne gjennom mange år med egne kamper — og som nå bruker den kunnskapen til å hjelpe deg.</p>
+
+          <h2>Historien bak</h2>
+          <p>Skadekrav.no ble startet av Hans Ivar, bosatt i Oslo-området. Bakgrunnen er ikke juridisk utdanning eller erfaring fra forsikringsbransjen — men noe som kanskje er mer verdifullt: år med egne kamper mot det norske forsikringssystemet.</p>
+          <p>Vannskader, stormskader, forsikringsavslag og oppgjør som var langt lavere enn det skadene faktisk kostet å utbedre. Som vanlig boligeier lærte Hans Ivar tidlig at forsikringsselskapene ikke alltid gjør jobben sin på vegne av deg. De har egne takstmenn, egne prosedyrer og egne interesser. Og de fleste av oss vet ikke at vi har rett til å utfordre dem.</p>
+          <p>Gjennom mange år med egne saker — for seg selv og familien — ble regelverket, klagemulighetene og de avgjørende argumentene innlært fra innsiden. Ikke fra en lærebok, men fra virkeligheten. Det er denne erfaringen som nå tilbys deg.</p>
+
+          <h2>Hva vi gjør</h2>
+          <p>Vi vurderer saken din, ser på dokumentasjonen og gir deg en ærlig tilbakemelding på om du har grunnlag for å gå videre. Hvis vi tror saken kan føre frem, følger vi den opp på dine vegne.</p>
+          <p>Vi er ikke advokater og tilbyr ikke juridisk rådgivning. Vi er erfarne privatpersoner som kjenner forsikringssystemet godt og vet hvordan man kommuniserer med forsikringsselskaper for å få rettferdige oppgjør.</p>
+
+          <h2>Hvem vi hjelper</h2>
+          <ul class="event-list">
+            <li>Boligeiere som har fått avslag de ikke forstår</li>
+            <li>Folk som har fått et oppgjør som ikke dekker den faktiske skaden</li>
+            <li>De som ikke meldte skaden med en gang, men fortsatt kan ha krav</li>
+            <li>Alle som føler seg overkjørt av forsikringsselskapet sitt</li>
+          </ul>
+
+          <h2>Vår modell — ingen risiko for deg</h2>
+          <p>Vi tar ingen betaling for vurderingen. Hvis vi vurderer at saken ikke har grunnlag, koster det deg ingenting. Hvis vi tar saken og vinner frem, tar vi 30 prosent av det vi henter inn for deg. Det betyr at vi bare tjener penger hvis du gjør det. Det er slik det skal være.</p>
+
+          <div class="cta-group">
+            <a class="btn" href="#" onclick="showPage('forside'); return false;">Send inn saken gratis</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ===== PERSONVERN ===== -->
+  <div id="page-personvern" class="page">
+    <main>
+      <section class="section">
+        <div class="container narrow">
+          <h1>Personvernerklæring</h1>
+          <p class="lead">Sist oppdatert: mars 2026</p>
+          <p>Skadekrav.no tar personvern på alvor. Denne erklæringen forklarer hvilke personopplysninger vi samler inn, hvorfor vi gjør det, og hvilke rettigheter du har.</p>
+
+          <h2>1. Behandlingsansvarlig</h2>
+          <ul class="event-list">
+            <li>Virksomhet: Skadekrav.no</li>
+            <li>Sted: Oslo, Norge</li>
+            <li>E-post: post@skadekrav.no</li>
+          </ul>
+          <p><em>Org.nr. og full forretningsadresse legges til når virksomheten er registrert i Brønnøysundregisteret.</em></p>
+
+          <h2>2. Hvilke opplysninger samler vi inn</h2>
+          <ul class="event-list">
+            <li>Navn, telefonnummer og e-postadresse</li>
+            <li>Beskrivelse av skaden og saken din</li>
+            <li>Eventuelle opplastede filer (bilder, faktura, dokumenter)</li>
+            <li>Svar på spørsmål om skadetype, forsikringsstatus og skadeomfang</li>
+          </ul>
+
+          <h2>3. Formål og rettslig grunnlag</h2>
+          <p>Vi behandler opplysningene for å vurdere saken din, kontakte deg med svar, og bistå deg i en eventuell klagesak mot forsikringsselskapet. Rettslig grunnlag er ditt samtykke (GDPR artikkel 6 nr. 1 bokstav a).</p>
+
+          <h2>4. Lagringstid</h2>
+          <p>Opplysninger lagres i inntil 12 måneder etter avsluttet sak. Saker som ikke følges opp videre slettes innen 3 måneder.</p>
+
+          <h2>5. Hvem deler vi opplysningene med</h2>
+          <p><strong>Formspree:</strong> Skjemaet bruker Formspree (formspree.io), et amerikansk selskap, som databehandler på våre vegne. Overføringen er basert på EUs standardkontraktsvilkår (SCCs). Les mer på formspree.io/legal/privacy-policy.</p>
+          <p><strong>Forsikringsselskaper:</strong> Opplysninger deles kun med ditt eksplisitte samtykke og på dine vegne i forbindelse med klagesaker.</p>
+
+          <h2>6. Dine rettigheter</h2>
+          <p>Du har rett til innsyn, retting, sletting og tilbaketrekking av samtykke. Du kan også klage til Datatilsynet på datatilsynet.no. Kontakt oss på post@skadekrav.no.</p>
+
+          <h2>7. Informasjonskapsler</h2>
+          <p>Skadekrav.no bruker ikke informasjonskapsler til sporing eller markedsføring.</p>
+
+          <h2>8. Kontakt</h2>
+          <p>Spørsmål om personvern? Ta kontakt på post@skadekrav.no.</p>
+
+          <div class="cta-group" style="margin-top: 2rem;">
+            <a class="btn" href="#" onclick="showPage('forside'); return false;">Tilbake til forsiden</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p class="footer-brand">
+        <img src="images/logo-skadekrav.svg" alt="Logo for Skadekrav.no" width="28" height="28">
+        <strong>skadekrav.no</strong>
+      </p>
+      <p>Tjeneste for vurdering av forsikringsrelaterte skadesaker · Oslo, Norge</p>
+      <a href="#" onclick="showPage('personvern'); return false;">Personvern</a>
+      <a href="#" onclick="showPage('om-oss'); return false;">Om oss</a>
+      <a href="#" onclick="showPage('forside'); scrollTo('kontakt'); return false;">Kontakt</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
