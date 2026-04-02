@@ -3,483 +3,1117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>skadekrav.no | Hjelp med forsikringskrav og skadeoppgjør bolig</title>
-  <meta name="description" content="Har du fått avslag eller for lav utbetaling fra forsikringen etter vannskade, stormskade eller annen boligskade? Vi vurderer skadekravet ditt gratis og hjelper deg få det du har rett på.">
-  <meta name="keywords" content="vannskade forsikring, forsikring avslag, klage forsikringsoppgjør, for lav utbetaling forsikring, hjelp forsikringssak bolig, følgeskade forsikring, lekkasje oppvaskmaskin forsikring, skadekrav bolig">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://skadekrav.no/">
-  <meta property="og:title" content="Skadekrav.no – Hjelp med forsikringskrav ved boligskade">
-  <meta property="og:description" content="Har du fått avslag eller for lav utbetaling? Vi vurderer saken gratis og hjelper deg få det du har krav på.">
-  <meta property="og:url" content="https://skadekrav.no/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="nb_NO">
-
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"Skadekrav.no","description":"Hjelp med forsikringskrav og skadeoppgjør ved boligskader i Norge","url":"https://skadekrav.no","areaServed":"Norway","serviceType":"Forsikringskrav og skadeoppgjør","priceRange":"30% provisjon ved vellykket oppgjør","availableLanguage":"Norwegian"}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Dekker forsikringen vannskade i gulv og parkett?","acceptedAnswer":{"@type":"Answer","text":"Mange vannskader kan være dekket hvis skaden oppstod plutselig. Forsikringsselskapet behandler ofte lekkasjen og følgeskadene som to separate skader — begge kan gi rett til erstatning."}},{"@type":"Question","name":"Hva gjør jeg hvis forsikringen har gitt for lav utbetaling?","acceptedAnswer":{"@type":"Answer","text":"Hvis oppgjøret er lavere enn kostnaden for å reparere skaden, kan det være grunnlag for å klage. Vi vurderer gratis om du har krav på mer."}},{"@type":"Question","name":"Kan jeg klage på forsikringsoppgjøret?","acceptedAnswer":{"@type":"Answer","text":"Ja. Du har rett til å klage. Vi hjelper deg — du betaler kun hvis vi lykkes."}},{"@type":"Question","name":"Hva koster det?","acceptedAnswer":{"@type":"Answer","text":"Vurderingen er alltid gratis. Får vi gjennomslag, er provisjonen 30 prosent. Lykkes vi ikke, betaler du ingenting."}}]}
-  </script>
-
+  <title>Skadekrav.no — Fikk du riktig oppgjør etter skaden?</title>
+  <meta name="description" content="Har du fått avslag eller for lav utbetaling fra forsikringen? Vi vurderer skadekravet ditt gratis. No cure, no pay.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    .page { display: none; }
-    .page.active { display: block; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --navy:#0d1f2d;--navy-mid:#1a3347;
+      --amber:#d97706;--amber-mid:#f59e0b;--amber-light:#fef3c7;
+      --cream:#faf8f4;--warm:#f0ece4;--white:#fff;
+      --text:#1a1a1a;--text-mid:#4a4a4a;--text-muted:#7a7a7a;
+      --border:#e5e0d8;--green:#166534;--green-bg:#dcfce7;
+      --r:12px;--rl:20px;
+      --fd:'Fraunces',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--fb);color:var(--text);background:var(--white);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    .page{display:none}.page.active{display:block}
+
+    .topbar{background:var(--navy);color:#94a3b8;font-size:12px;font-weight:500;padding:9px 0;text-align:center}
+    .topbar-inner{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+    .topbar span{display:flex;align-items:center;gap:5px}
+    .ck{color:var(--amber-mid)}
+
+    .site-header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1100px;margin:0 auto}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-icon{width:34px;height:34px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .logo-wm{font-family:var(--fd);font-size:18px;font-weight:600;letter-spacing:-.02em;color:var(--navy)}
+    .logo-wm span{color:var(--amber)}
+    .main-nav{display:flex;align-items:center;gap:4px}
+    .main-nav a{text-decoration:none;font-size:14px;font-weight:500;color:var(--text-mid);padding:6px 12px;border-radius:8px;transition:background .15s}
+    .main-nav a:hover{background:var(--warm);color:var(--text)}
+    .nav-cta{background:var(--navy)!important;color:var(--white)!important;padding:8px 18px!important}
+    .nav-cta:hover{background:var(--navy-mid)!important}
+    .menu-toggle{display:none;background:none;border:1.5px solid var(--border);border-radius:8px;padding:6px 14px;font-size:14px;cursor:pointer;font-family:var(--fb)}
+
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    .narrow{max-width:720px;margin:0 auto;padding:0 24px}
+    section{padding:72px 0}
+    .section-soft{background:var(--cream)}
+    .section-warm{background:var(--warm)}
+
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:10px;font-family:var(--fb);font-size:15px;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:transform .15s,background .15s}
+    .btn-primary{background:var(--navy);color:var(--white);box-shadow:0 4px 14px rgba(13,31,45,.25)}
+    .btn-primary:hover{background:var(--navy-mid);transform:translateY(-1px)}
+    .btn-ghost{background:var(--white);color:var(--navy);border:1.5px solid var(--border)}
+    .btn-ghost:hover{background:var(--warm)}
+    .btn-amber{background:var(--amber);color:var(--white)}
+    .btn-amber:hover{background:#b45309;transform:translateY(-1px)}
+    .cta-group{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* HERO */
+    .hero{background:var(--cream);padding:80px 0;overflow:hidden;position:relative}
+    .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,#fef3c7,transparent 65%);pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .hero-kicker{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);background:var(--amber-light);border:1px solid #fde68a;padding:5px 12px;border-radius:100px;margin-bottom:20px}
+    h1{font-family:var(--fd);font-size:clamp(36px,5vw,54px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:var(--navy);margin-bottom:20px}
+    h1 em{font-style:italic;color:var(--amber);font-weight:300}
+    .lead{font-size:18px;color:var(--text-mid);line-height:1.65;margin-bottom:32px}
+    .trust-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .trust-pill{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-mid);font-weight:500}
+    .trust-pill::before{content:'✓';display:flex;align-items:center;justify-content:center;width:18px;height:18px;background:var(--green-bg);color:var(--green);border-radius:50%;font-size:10px;font-weight:700;flex-shrink:0}
+
+    /* AUTO FLOW ILLUSTRATION */
+    .auto-visual{background:var(--navy);border-radius:var(--rl);padding:28px;box-shadow:0 24px 64px rgba(0,0,0,.2)}
+    .auto-visual-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#475569;margin-bottom:16px}
+    .auto-node{display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,.06);border-radius:10px;margin-bottom:3px}
+    .an-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+    .an-text h4{font-size:13px;font-weight:600;color:var(--white);margin-bottom:1px}
+    .an-text p{font-size:11px;color:#475569}
+    .auto-arrow{text-align:center;color:#1e3a5f;font-size:16px;line-height:1;padding:1px 0 1px 62px}
+    .abadge{margin-left:auto;font-size:10px;font-weight:700;padding:2px 8px;border-radius:5px;letter-spacing:.04em;white-space:nowrap;flex-shrink:0}
+    .ab-live{background:#0f3620;color:#4ade80}
+    .ab-auto{background:#1e3a5f;color:#93c5fd}
+    .ab-ai{background:#2e1065;color:#c4b5fd}
+
+    /* STATS */
+    .stats-section{background:var(--navy);padding:52px 0}
+    .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);border-radius:var(--r);overflow:hidden}
+    .stat{background:var(--navy);padding:32px 36px;text-align:center}
+    .stat-num{display:block;font-family:var(--fd);font-size:40px;font-weight:700;color:var(--amber-mid);line-height:1;margin-bottom:8px}
+    .stat-label{font-size:14px;color:#94a3b8;line-height:1.4}
+
+    h2{font-family:var(--fd);font-size:clamp(26px,3.5vw,38px);font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--navy);margin-bottom:12px}
+    h2 em{font-style:italic;font-weight:300;color:var(--amber)}
+    .section-sub{font-size:17px;color:var(--text-mid);margin-bottom:40px;max-width:540px}
+
+    .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);border-radius:var(--rl);overflow:hidden;margin-bottom:28px}
+    .step-card{background:var(--white);padding:28px 22px}
+    .step-num{width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--white);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+    .step-title{font-weight:600;font-size:15px;color:var(--navy);margin-bottom:6px}
+    .step-text{font-size:14px;color:var(--text-mid);line-height:1.55}
+    .payment-box{background:var(--navy);border-radius:var(--rl);padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .payment-box h3{font-family:var(--fd);font-size:22px;font-weight:600;color:var(--white);margin-bottom:8px}
+    .payment-box p{font-size:15px;color:#94a3b8;max-width:420px}
+    .payment-box p strong{color:var(--amber-mid)}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+    .contact-intro p{font-size:15px;color:var(--text-mid);margin-bottom:12px;line-height:1.65}
+    .reassure-list{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+    .reassure-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-mid)}
+    .ri{width:22px;height:22px;border-radius:50%;background:var(--green-bg);color:var(--green);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+
+    /* FORM */
+    .form-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--rl);padding:32px;box-shadow:0 8px 32px rgba(0,0,0,.06)}
+    .form-header{margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+    .fh-title{font-family:var(--fd);font-size:20px;font-weight:600;color:var(--navy);margin-bottom:4px}
+    .fh-sub{font-size:13px;color:var(--text-muted)}
+    .progress-wrap{height:4px;background:var(--warm);border-radius:2px;margin-bottom:8px;overflow:hidden}
+    .progress-bar{height:100%;background:var(--amber);border-radius:2px;transition:width .3s ease}
+    .step-counter{font-size:12px;color:var(--text-muted);margin-bottom:20px}
+    .form-step{display:none}.form-step.active{display:block}
+    .step-q{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:14px}
+    .form-card label{display:block;font-size:13px;font-weight:500;color:var(--text-mid);margin-bottom:5px;margin-top:14px}
+    .form-card label:first-child{margin-top:0}
+    .form-card input[type=text],.form-card input[type=tel],.form-card input[type=email],.form-card textarea{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--fb);font-size:15px;color:var(--text);background:var(--white);transition:border-color .15s;appearance:none}
+    .form-card select{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--fb);font-size:15px;color:var(--text);background:var(--white);transition:border-color .15s;-webkit-appearance:auto;appearance:auto;pointer-events:auto;cursor:pointer}
+    .form-card select:focus,.form-card input:focus,.form-card textarea:focus{outline:none;border-color:var(--navy)}
+    .form-card textarea{resize:vertical;min-height:90px}
+    .form-card input[type=file]{padding:8px 0;font-size:14px;border:none;color:var(--text-mid)}
+    .check-label{display:flex!important;align-items:flex-start;gap:10px;font-size:13px!important;font-weight:400!important;color:var(--text-mid)!important;cursor:pointer;margin-top:16px!important}
+    .check-label input{width:16px;height:16px;flex-shrink:0;margin-top:2px}
+    .form-nav{display:flex;justify-content:space-between;align-items:center;margin-top:20px;gap:10px}
+    .btn-fp{background:var(--navy);color:var(--white);padding:12px 24px;font-size:15px;font-weight:600;border-radius:8px;border:none;cursor:pointer;font-family:var(--fb);transition:background .15s;flex:1}
+    .btn-fp:hover{background:var(--navy-mid)}
+    .btn-fb{background:none;border:1.5px solid var(--border);color:var(--text-mid);padding:12px 18px;font-size:14px;border-radius:8px;cursor:pointer;font-family:var(--fb)}
+    .btn-fb:hover{background:var(--warm)}
+    .form-footnote{font-size:12px;color:var(--text-muted);margin-top:14px;text-align:center}
+    .field-note{font-size:12px;color:var(--amber);margin-top:8px;font-weight:500}
+
+    /* SUCCESS */
+    .form-success{display:none;flex-direction:column}
+    .form-success.visible{display:flex}
+    .succ-header{text-align:center;padding:28px 24px 20px}
+    .succ-icon{width:64px;height:64px;background:var(--green-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px}
+    .succ-header h3{font-family:var(--fd);font-size:22px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .succ-header p{font-size:14px;color:var(--text-mid)}
+    .succ-ref{display:inline-block;background:var(--amber-light);border:1px solid #fde68a;color:var(--amber);font-size:13px;font-weight:700;padding:5px 14px;border-radius:8px;margin-top:10px;letter-spacing:.04em}
+
+    /* AI SCORE IN SUCCESS */
+    .ai-score-box{margin:0 24px 16px;background:var(--cream);border:1.5px solid var(--border);border-radius:var(--r);padding:18px}
+    .ai-score-box h4{font-family:var(--fd);font-size:16px;font-weight:600;color:var(--navy);margin-bottom:4px}
+    .ai-score-box p{font-size:13px;color:var(--text-mid);margin-bottom:12px}
+    .score-meter{height:10px;background:var(--warm);border-radius:5px;overflow:hidden;margin-bottom:6px}
+    .score-meter-fill{height:100%;border-radius:5px;transition:width 1.2s ease}
+    .score-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:12px}
+    .score-verdict{font-size:13px;font-weight:600;padding:8px 12px;border-radius:8px;text-align:center}
+    .sv-high{background:var(--green-bg);color:var(--green)}
+    .sv-mid{background:var(--amber-light);color:var(--amber)}
+    .sv-low{background:#fef2f2;color:#b91c1c}
+
+    /* AUTO TIMELINE IN SUCCESS */
+    .atl{padding:0 24px 20px;display:flex;flex-direction:column}
+    .atl-title{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px}
+    .atl-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;position:relative}
+    .atl-item:not(:last-child)::after{content:'';position:absolute;left:15px;top:40px;bottom:0;width:1.5px;background:var(--border)}
+    .atl-dot{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;border:1.5px solid transparent}
+    .atl-dot.done{background:var(--green-bg);border-color:#86efac;color:var(--green)}
+    .atl-dot.running{background:var(--amber-light);border-color:#fde68a;color:var(--amber);animation:pulse 1.5s infinite}
+    .atl-dot.wait{background:var(--warm);border-color:var(--border);color:var(--text-muted)}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,.3)}50%{box-shadow:0 0 0 5px rgba(245,158,11,0)}}
+    .atl-info h5{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:2px}
+    .atl-info p{font-size:12px;color:var(--text-muted)}
+    .atl-time{margin-left:auto;font-size:11px;color:var(--text-muted);white-space:nowrap;padding-top:3px}
+
+    /* STATUS TRACKER */
+    .status-section{background:var(--warm);padding:64px 0}
+    .status-wrap{max-width:560px;margin:0 auto}
+    .status-input-row{display:flex;gap:10px;margin-bottom:20px}
+    .status-input{flex:1;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--fb);font-size:15px;color:var(--text);background:var(--white)}
+    .status-input:focus{outline:none;border-color:var(--navy)}
+    .status-btn{background:var(--navy);color:var(--white);border:none;padding:12px 20px;border-radius:8px;font-family:var(--fb);font-size:14px;font-weight:600;cursor:pointer}
+    .status-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--rl);padding:28px;display:none}
+    .status-card.visible{display:block}
+    .sc-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;gap:16px}
+    .sc-title h4{font-family:var(--fd);font-size:18px;font-weight:600;color:var(--navy);margin-bottom:4px}
+    .sc-title p{font-size:13px;color:var(--text-muted)}
+    .sc-badge{font-size:12px;font-weight:700;padding:5px 12px;border-radius:8px;white-space:nowrap}
+    .ss-item{display:flex;align-items:flex-start;gap:14px;padding:12px 0;position:relative}
+    .ss-item:not(:last-child)::after{content:'';position:absolute;left:15px;top:44px;bottom:0;width:2px;background:var(--border)}
+    .ss-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;border:2px solid transparent}
+    .ss-dot.done{background:var(--green-bg);border-color:#86efac;color:var(--green)}
+    .ss-dot.active{background:var(--amber-light);border-color:#fde68a;color:var(--amber);animation:pulse 2s infinite}
+    .ss-dot.pending{background:var(--warm);border-color:var(--border);color:var(--text-muted)}
+    .ss-body h5{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:2px}
+    .ss-body p{font-size:13px;color:var(--text-muted);line-height:1.4}
+    .ss-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:5px;margin-left:8px}
+    .ss-badge.done{background:var(--green-bg);color:var(--green)}
+    .ss-badge.active{background:var(--amber-light);color:var(--amber)}
+    .status-notfound{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:20px;text-align:center;font-size:14px;color:var(--text-mid);display:none}
+    .status-notfound.visible{display:block}
+
+    /* AI CHAT */
+    .ai-fab{position:fixed;bottom:28px;right:28px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+    .ai-bubble{background:var(--navy);color:var(--white);border-radius:18px 18px 4px 18px;padding:10px 15px;font-size:13px;font-weight:500;max-width:210px;text-align:right;box-shadow:0 4px 16px rgba(0,0,0,.2);animation:bob 3s ease-in-out infinite;line-height:1.4}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+    .ai-btn{width:56px;height:56px;border-radius:50%;background:var(--amber);border:none;cursor:pointer;box-shadow:0 4px 20px rgba(217,119,6,.4);display:flex;align-items:center;justify-content:center;font-size:24px;transition:transform .2s}
+    .ai-btn:hover{transform:scale(1.08)}
+    .ai-panel{position:fixed;bottom:100px;right:28px;z-index:998;width:370px;background:var(--white);border:1.5px solid var(--border);border-radius:var(--rl);box-shadow:0 16px 56px rgba(0,0,0,.16);display:none;flex-direction:column;max-height:540px;overflow:hidden}
+    .ai-panel.open{display:flex}
+    .ai-ph{background:var(--navy);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+    .ai-ph-info{display:flex;align-items:center;gap:10px}
+    .ai-dot{width:8px;height:8px;border-radius:50%;background:#4ade80}
+    .ai-ph h4{font-family:var(--fd);font-size:16px;font-weight:600;color:var(--white)}
+    .ai-ph p{font-size:11px;color:#94a3b8;margin-top:1px}
+    .ai-close{background:none;border:none;color:#94a3b8;font-size:22px;cursor:pointer;line-height:1;padding:2px}
+    .ai-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+    .ai-msg{max-width:88%;padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.55}
+    .ai-msg.bot{background:var(--cream);color:var(--text);border-radius:4px 14px 14px 14px;align-self:flex-start}
+    .ai-msg.user{background:var(--navy);color:var(--white);border-radius:14px 14px 4px 14px;align-self:flex-end}
+    .ai-typing{background:var(--cream);align-self:flex-start;padding:14px;border-radius:4px 14px 14px 14px}
+    .dots{display:flex;gap:4px}
+    .dots span{width:7px;height:7px;border-radius:50%;background:var(--text-muted);animation:dt .9s infinite}
+    .dots span:nth-child(2){animation-delay:.2s}
+    .dots span:nth-child(3){animation-delay:.4s}
+    @keyframes dt{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+    .ai-input-row{padding:12px 16px;border-top:1px solid var(--border);display:flex;gap:8px;flex-shrink:0}
+    .ai-input{flex:1;padding:9px 13px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--fb);font-size:14px;color:var(--text)}
+    .ai-input:focus{outline:none;border-color:var(--navy)}
+    .ai-send{background:var(--navy);border:none;border-radius:8px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--white);font-size:16px}
+    .ai-send:hover{background:var(--navy-mid)}
+    .chat-score{background:var(--cream);border-radius:10px;padding:14px;font-size:13px}
+    .csb-bg{height:7px;background:#e5e0d8;border-radius:3px;margin:8px 0 4px;overflow:hidden}
+    .csb-fill{height:100%;border-radius:3px;transition:width .8s}
+    .chat-cta{margin-top:10px;width:100%;background:var(--navy);color:#fff;border:none;padding:9px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--fb)}
+
+    /* FAQ */
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 0;cursor:pointer;font-size:16px;font-weight:600;color:var(--navy);gap:16px}
+    .faq-icon{width:26px;height:26px;border-radius:50%;background:var(--warm);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:transform .2s,background .15s;color:var(--navy)}
+    .faq-item.open .faq-icon{background:var(--navy);color:var(--white);transform:rotate(45deg)}
+    .faq-a{font-size:15px;color:var(--text-mid);line-height:1.65;padding-bottom:18px;display:none}
+    .faq-item.open .faq-a{display:block}
+
+    .site-footer{background:var(--navy);color:#94a3b8;padding:48px 0 32px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
+    .footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+    .footer-brand-name{font-family:var(--fd);font-size:18px;font-weight:600;color:var(--white)}
+    .footer-tagline{font-size:13px;color:#64748b;line-height:1.6}
+    .footer-col h4{font-size:13px;font-weight:600;color:var(--white);margin-bottom:12px;letter-spacing:.04em;text-transform:uppercase}
+    .footer-col a{display:block;font-size:14px;color:#64748b;text-decoration:none;margin-bottom:8px;transition:color .15s}
+    .footer-col a:hover{color:var(--white)}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;font-size:12px;color:#475569;flex-wrap:wrap;gap:8px}
+
+    .cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .case-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--rl);padding:32px;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+    .case-badge{display:inline-block;font-size:12px;font-weight:700;background:var(--amber-light);color:var(--amber);border:1px solid #fde68a;padding:4px 12px;border-radius:100px;margin-bottom:16px;letter-spacing:.02em}
+    .case-title{font-family:var(--fd);font-size:20px;font-weight:600;color:var(--navy);margin-bottom:12px;line-height:1.25}
+    .case-text{font-size:15px;color:var(--text-mid);line-height:1.65}
+
+    @media(max-width:860px){
+      .hero-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
+      .steps-grid{grid-template-columns:1fr 1fr}
+      .stats-grid{grid-template-columns:1fr}
+      .payment-box{flex-direction:column}
+      .main-nav{display:none}
+      .menu-toggle{display:block}
+      .ai-panel{width:calc(100vw - 32px);right:16px}
+      .cases-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:560px){.steps-grid{grid-template-columns:1fr}}
+
+    /* CASE DETAIL */
+    .cases-detail{display:flex;flex-direction:column;gap:28px}
+    .case-detail-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+    .case-detail-header{padding:20px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    .case-detail-title{font-family:var(--fd);font-size:19px;font-weight:600;color:var(--navy);flex:1;line-height:1.3}
+    .case-tags{display:flex;gap:6px;flex-wrap:wrap}
+    .case-tag{font-size:11px;font-weight:600;background:var(--amber-light);color:var(--amber);border:1px solid #fde68a;padding:3px 10px;border-radius:100px;letter-spacing:.03em;white-space:nowrap}
+    .case-cols{display:grid;grid-template-columns:1fr 1fr 1fr}
+    .case-col{padding:22px 28px;border-right:1px solid var(--border)}
+    .case-col:last-child{border-right:none;background:rgba(245,158,11,.03)}
+    .case-col-label{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px}
+    .case-col p{font-size:14px;color:var(--text-mid);line-height:1.65}
+    .case-amount-before{font-size:13px;color:var(--text-muted);text-decoration:line-through;margin-bottom:2px}
+    .case-amount-arrow{font-size:20px;color:var(--amber);margin:3px 0;line-height:1}
+    .case-amount-final{font-family:var(--fd);font-size:30px;font-weight:700;color:var(--amber);line-height:1;margin-bottom:4px}
+    .case-amount-label{font-size:12px;color:var(--text-muted)}
+    .cases-note{text-align:center;font-size:14px;color:var(--text-muted);margin-top:20px;font-style:italic}
+    @media(max-width:760px){.case-cols{grid-template-columns:1fr}.case-col{border-right:none;border-bottom:1px solid var(--border)}.case-col:last-child{border-bottom:none}.case-detail-header{flex-direction:column;align-items:flex-start}}
+
+    /* STEP ICON */
+    .step-icon{width:40px;height:40px;border-radius:10px;background:var(--amber-light);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px;flex-shrink:0}
+
+    /* NAV SEARCH */
+    .nav-search{position:relative;display:flex;align-items:center;gap:0;margin-left:6px}
+    .nav-search-input{width:34px;padding:6px 32px 6px 10px;border:1.5px solid transparent;border-radius:8px;font-family:var(--fb);font-size:14px;color:var(--text);background:transparent;transition:width .25s ease,border-color .15s,background .15s,padding .15s;outline:none;cursor:pointer;white-space:nowrap;overflow:hidden}
+    .nav-search-input:focus,.nav-search-input.open{width:190px;border-color:var(--border);background:var(--white);cursor:text}
+    .nav-search-input::placeholder{color:var(--text-muted);opacity:0;transition:opacity .2s}
+    .nav-search-input:focus::placeholder,.nav-search-input.open::placeholder{opacity:1}
+    .nav-search-icon{position:absolute;right:8px;top:50%;transform:translateY(-50%);color:var(--text-muted);pointer-events:none;line-height:1;display:flex}
+    .search-results{position:absolute;top:calc(100% + 8px);right:0;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);box-shadow:0 8px 28px rgba(0,0,0,.11);min-width:270px;z-index:300;display:none}
+    .search-results.visible{display:block}
+    .search-result-item{padding:10px 16px;cursor:pointer;font-size:14px;color:var(--text-mid);border-bottom:1px solid var(--border);transition:background .1s}
+    .search-result-item:last-child{border-bottom:none}
+    .search-result-item:hover{background:var(--warm);color:var(--text)}
+    .search-result-label{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);padding:8px 16px 4px;border-bottom:1px solid var(--border)}
+    .search-no-result{padding:12px 16px;font-size:13px;color:var(--text-muted);line-height:1.5}
+    .search-no-result a{color:var(--amber);text-decoration:none;font-weight:600}
+    @media(max-width:860px){.nav-search{display:none}}
+
+    /* PROTECT BOX */
+    .protect-box{background:var(--navy);border-radius:var(--r);padding:24px 28px;margin-bottom:24px}
+    .protect-box h3{font-family:var(--fd);font-size:16px;font-weight:600;color:var(--white);margin-bottom:14px;letter-spacing:-.01em}
+    .protect-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#94a3b8;margin-bottom:9px;line-height:1.5}
+    .protect-item:last-child{margin-bottom:0}
+    .protect-check{width:18px;height:18px;border-radius:50%;background:rgba(74,222,128,.15);color:#4ade80;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
   </style>
 </head>
 <body>
 
-  <div class="topbar" role="banner" aria-label="Fordeler">
-    <span>✓ Gratis vurdering</span>
-    <span>✓ Svar innen 48 timer</span>
-    <span>✓ Ingen betaling uten utbetaling</span>
+<div class="topbar">
+  <div class="topbar-inner">
+    <span><span class="ck">✓</span> Gratis vurdering</span>
+    <span><span class="ck">✓</span> Svar innen 48 timer</span>
+    <span><span class="ck">✓</span> Ingen betaling uten utbetaling</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="#" onclick="showPage('forside');return false;">
+      <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="#f59e0b"/></svg></div>
+      <span class="logo-wm">skadekrav<span>.no</span></span>
+    </a>
+    <button class="menu-toggle">Meny</button>
+    <nav class="main-nav">
+      <a href="#" onclick="showPage('forside');gotoId('slik');return false;">Slik fungerer det</a>
+      <a href="#" onclick="showPage('forside');gotoId('status-section');return false;">Min sak</a>
+      <a href="#" onclick="showPage('forside');gotoId('faq');return false;">FAQ</a>
+      <a href="#" onclick="showPage('om-oss');return false;">Om oss</a>
+      <a href="#kontakt" class="nav-cta">Sjekk saken gratis →</a>
+    </nav>
+    <div class="nav-search">
+      <input type="text" id="nav-search-input" class="nav-search-input" placeholder="Søk på siden…" autocomplete="off" aria-label="Søk">
+      <span class="nav-search-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+      <div id="nav-search-results" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<div id="page-forside" class="page active">
+<main>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="hero-kicker">No cure, no pay — ingen risiko</p>
+        <h1>Fikk du det du <em>hadde krav på</em>?</h1>
+        <p class="lead">Vi leser salgsoppgaven og forsikringsvilkårene linje for linje — og finner avvikene forsikringsselskapet ikke vil at du skal se. Du betaler kun hvis vi vinner frem.</p>
+        <div class="cta-group" style="margin-bottom:24px">
+          <a class="btn btn-primary" href="#kontakt">Sjekk saken gratis →</a>
+          <a class="btn btn-ghost" href="#" onclick="gotoId('slik');return false;">Slik fungerer det</a>
+        </div>
+        <div class="trust-pills">
+          <span class="trust-pill">Gratis vurdering</span>
+          <span class="trust-pill">Svar innen 48 timer</span>
+          <span class="trust-pill">30 % provisjon kun ved seier</span>
+        </div>
+      </div>
+      <div class="auto-visual">
+        <div class="auto-visual-label">Automatisert arbeidsflyt</div>
+        <div class="auto-node"><div class="an-icon" style="background:rgba(245,158,11,.12)">📋</div><div class="an-text"><h4>Sak mottas</h4><p>Skjema sendes inn på siden</p></div><span class="abadge ab-live">LIVE</span></div>
+        <div class="auto-arrow">↓</div>
+        <div class="auto-node"><div class="an-icon" style="background:rgba(139,92,246,.12)">🔍</div><div class="an-text"><h4>Vurdering av saken</h4><p>Vinnsjanse beregnes automatisk</p></div><span class="abadge ab-auto">AUTO</span></div>
+        <div class="auto-arrow">↓</div>
+        <div class="auto-node"><div class="an-icon" style="background:rgba(59,130,246,.12)">📧</div><div class="an-text"><h4>Bekreftelse sendes</h4><p>Kunden får saksnummer på e-post</p></div><span class="abadge ab-auto">AUTO</span></div>
+        <div class="auto-arrow">↓</div>
+        <div class="auto-node"><div class="an-icon" style="background:rgba(16,185,129,.12)">🔔</div><div class="an-text"><h4>Internt varsel</h4><p>Teamet varsles direkte</p></div><span class="abadge ab-auto">AUTO</span></div>
+        <div class="auto-arrow">↓</div>
+        <div class="auto-node"><div class="an-icon" style="background:rgba(245,158,11,.12)">📍</div><div class="an-text"><h4>Status live</h4><p>Kunden følger saken sin selv</p></div><span class="abadge ab-live">LIVE</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat"><span class="stat-num">70 000</span><span class="stat-label">vannskader meldes i Norge hvert år</span></div>
+        <div class="stat"><span class="stat-num">60 000 kr</span><span class="stat-label">gjennomsnittlig utbedringskostnad</span></div>
+        <div class="stat"><span class="stat-num">0 kr</span><span class="stat-label">betaler du hvis saken ikke fører frem</span></div>
+      </div>
+    </div>
   </div>
 
-  <header class="site-header" id="top">
-    <div class="container nav-wrap">
-      <a class="logo" href="#" onclick="showPage('forside'); return false;" aria-label="Til forsiden">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="#d97706"/>
-        </svg>
-        <span>skadekrav.no</span>
-      </a>
-      <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Meny</button>
-      <nav id="main-menu" class="main-nav" aria-label="Hovedmeny">
-        <a href="#" onclick="showPage('forside'); scrollTo('krav'); return false;">Vurdering</a>
-        <a href="#" onclick="showPage('forside'); scrollTo('slik'); return false;">Slik fungerer det</a>
-        <a href="#" onclick="showPage('om-oss'); return false;">Om oss</a>
-        <a href="#" onclick="showPage('forside'); scrollTo('kontakt'); return false;">Kontakt</a>
-      </nav>
+  <section class="section-soft" id="slik">
+    <div class="container">
+      <h2>Slik fungerer <em>det</em></h2>
+      <p class="section-sub">Fra innsending til svar — automatisert og ryddig.</p>
+      <div class="steps-grid">
+        <div class="step-card"><div class="step-icon">📝</div><div class="step-title">Send inn saken</div><p class="step-text">Fyll ut skjemaet på 2 minutter med en kort beskrivelse og eventuelle bilder.</p></div>
+        <div class="step-card"><div class="step-icon">🔍</div><div class="step-title">Vi vurderer saken</div><p class="step-text">Teamet vårt går gjennom det du har sendt inn og vurderer grunnlaget for å gå videre.</p></div>
+        <div class="step-card"><div class="step-icon">⏱</div><div class="step-title">Svar innen 48 timer</div><p class="step-text">Du får en ærlig tilbakemelding på om saken har grunnlag og hva vi anbefaler som neste steg.</p></div>
+        <div class="step-card"><div class="step-icon">🤝</div><div class="step-title">Betal kun ved seier</div><p class="step-text">30 % provisjon av det vi henter inn for deg. Ingen seier — ingen regning.</p></div>
+      </div>
+      <div class="payment-box">
+        <div><h3>Ingen skjulte kostnader</h3><p>Vurderingen er alltid gratis. Vår provisjon er <strong>30 % av det vi henter inn</strong> for deg utover det du allerede har fått. Lykkes vi ikke, betaler du ingenting.</p></div>
+        <a class="btn btn-amber" href="#kontakt" style="white-space:nowrap">Start gratis →</a>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <!-- ===== FORSIDE ===== -->
-  <div id="page-forside" class="page active">
-    <main>
+  <!-- RESULTATER -->
+  <section id="resultater">
+    <div class="container">
+      <h2>Våre <em>resultater</em></h2>
+      <p class="section-sub">Ekte saker, ekte utbetalinger — ingen fiktive tall.</p>
+      <div class="cases-detail">
 
-      <section class="hero section">
-        <div class="container hero-grid">
-          <div class="hero-content">
-            <p class="hero-kicker">Gratis vurdering — ingen risiko</p>
-            <h1>Fikk du riktig oppgjør etter skaden?</h1>
-            <p class="lead">Vi vurderer gratis om forsikringen skal dekke mer — og tar betalt kun hvis vi vinner frem.</p>
-            <div class="cta-group">
-              <a class="btn js-cta-primary" href="#" onclick="scrollTo('kontakt'); return false;">Sjekk saken gratis</a>
-              <a class="btn btn-ghost" href="#" onclick="scrollTo('slik'); return false;">Slik fungerer det</a>
-            </div>
-            <div class="trust-line" aria-label="Trygghetsinformasjon">
-              <span>&#9733; Anbefalt av 200+ boligeiere</span>
-              <span>Svar innen 48 timer</span>
-              <span>Ingen betaling uten utbetaling</span>
+        <div class="case-detail-card">
+          <div class="case-detail-header">
+            <h3 class="case-detail-title">«To nye bad» — som ikke var nye nok</h3>
+            <div class="case-tags">
+              <span class="case-tag">Eierskifteforsikring</span>
+              <span class="case-tag">Bad</span>
+              <span class="case-tag">Elektrisk</span>
             </div>
           </div>
-          <figure class="hero-image-wrap">
-            <div class="hero-split" role="img" aria-label="Parkettgulv skadet av vann til venstre, renovert rom til høyre">
-              <div class="hero-split-half">
-                <img src="images/hero-parkett-vannskade.jpg" alt="Skadet parkettgulv før utbedring" loading="eager">
-                <span class="hero-split-badge foer">Før</span>
-              </div>
-              <div class="hero-split-divider" aria-hidden="true"></div>
-              <div class="hero-split-half">
-                <img src="images/resultat-kjokken.jpg" alt="Renovert rom etter forsikringsoppgjør" loading="eager">
-                <span class="hero-split-badge etter">Etter</span>
-              </div>
+          <div class="case-cols">
+            <div class="case-col">
+              <div class="case-col-label">Bakgrunn</div>
+              <p>Leilighet solgt med to oppgraderte bad og kvitteringer som bevis. Etter overtakelse viste det seg at verken membran eller elektrisk var utført korrekt.</p>
             </div>
-          </figure>
-        </div>
-      </section>
-
-      <section class="section section-stats">
-        <div class="container stats-grid">
-          <div class="stat">
-            <span class="stat-num">70 000</span>
-            <span class="stat-label">vannskader meldes i Norge hvert år</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">60 000 kr</span>
-            <span class="stat-label">gjennomsnittlig utbedringskostnad</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">0 kr</span>
-            <span class="stat-label">betaler du hvis saken ikke fører frem</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-soft" id="slik">
-        <div class="container">
-          <h2>Slik fungerer det</h2>
-          <div class="steps four">
-            <article class="step">
-              <span class="step-num">1</span>
-              <p>Du sender inn saken med en kort beskrivelse og eventuelle bilder eller dokumenter.</p>
-            </article>
-            <article class="step">
-              <span class="step-num">2</span>
-              <p>En erfaren rådgiver går gjennom dokumentasjonen og vurderer potensialet i saken.</p>
-            </article>
-            <article class="step">
-              <span class="step-num">3</span>
-              <p>Du får svar innen 48 timer på om saken kan følges opp videre.</p>
-            </article>
-            <article class="step">
-              <span class="step-num">4</span>
-              <p>Du betaler kun dersom saken fører til utbetaling.</p>
-            </article>
-          </div>
-          <aside class="payment-box" aria-label="Betalingsinformasjon">
-            <h3>Slik betaler du</h3>
-            <p>Du betaler kun dersom vi får gjennomslag i saken.</p>
-            <p>Vår provisjon er 30 prosent av utbetalingen — av det ekstra vi henter inn for deg.</p>
-            <p>Hvis saken ikke fører frem betaler du ingenting.</p>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section" id="krav">
-        <div class="container narrow">
-          <h2>Vannskader og andre skader som kan gi rett til høyere utbetaling</h2>
-          <p>En del vannskader og andre skader på bolig eller eiendom blir aldri meldt til forsikringen. Andre ganger gir forsikringsselskapet et oppgjør som er lavere enn det skaden faktisk koster å reparere — uten at du vet at du kan klage.</p>
-          <p>Forsikringsselskaper behandler ofte lekkasjen og følgeskadene separat. Det betyr at du kan ha krav på erstatning for skader du ikke visste var dekket.</p>
-          <p>Dette ser vi ofte i saker som gjelder:</p>
-          <ul class="event-list">
-            <li>Vannskade som ødelegger parkett, gulv eller vegg</li>
-            <li>Lekkasje fra oppvaskmaskin, varmtvannsbereder eller vaskemaskin</li>
-            <li>Tre som blåser ned på tomt, terrasse eller tak</li>
-            <li>Forsikringsoppgjør som virker for lavt</li>
-            <li>Avslag på forsikringskrav du mener burde vært dekket</li>
-            <li>Skader som ikke ble meldt inn da de oppstod</li>
-          </ul>
-          <img src="images/stormskade.jpg" alt="Stormskade — tre veltet over terrasse" loading="lazy" class="krav-storm-img">
-          <p>Vi vurderer gratis om saken bør følges opp videre.</p>
-        </div>
-      </section>
-
-      <section class="section" id="passer-best">
-        <div class="container narrow">
-          <h2>Når passer tjenesten vår best</h2>
-          <p>Tjenesten passer best i saker der:</p>
-          <ul class="event-list">
-            <li>Skaden gjelder bolig eller eiendom</li>
-            <li>Skaden oppstod plutselig, som vannlekkasje eller storm</li>
-            <li>Forsikringsselskapet har gitt avslag eller lav utbetaling</li>
-            <li>Skaden ikke ble meldt, men reparasjonen ble kostbar</li>
-            <li>Du har bilder, takst, faktura eller annen dokumentasjon</li>
-          </ul>
-          <p>Mindre skader ligger ofte nær egenandelen i forsikringen. Vi prioriterer derfor normalt saker der kostnaden for å reparere skaden er over 70 000 kroner.</p>
-          <p>Er du usikker, kan du likevel sende inn saken for en gratis vurdering.</p>
-        </div>
-      </section>
-
-      <section class="section section-soft" id="kundehistorier">
-        <div class="container">
-          <h2>Hva sier kundene våre</h2>
-          <p class="section-lead">Reelle historier fra boligeiere vi har hjulpet.</p>
-          <div class="testimonials-grid">
-            <article class="testimonial-card">
-              <blockquote>Forsikringsselskapet tilbød 45 000 kr for parketten. Etter hjelp fra skadekrav.no fikk vi 180 000 kr — mer enn nok til full renovering.</blockquote>
-              <footer>
-                <strong>Kari Olsen</strong>
-                <span>Oslo</span>
-              </footer>
-            </article>
-            <article class="testimonial-card">
-              <blockquote>Trodde saken var tapt etter avslaget fra forsikringen. De oppdaget at avslaget ikke var begrunnet riktig, og vi fikk til slutt full dekning.</blockquote>
-              <footer>
-                <strong>Petter Andersen</strong>
-                <span>Bergen</span>
-              </footer>
-            </article>
-            <article class="testimonial-card">
-              <blockquote>Oppvaskmaskinen lakk i over ett år før vi oppdaget skaden bak kjøkkeninnredningen. Skadekrav.no hjalp oss å dokumentere saken og vi fikk 95 000 kr.</blockquote>
-              <footer>
-                <strong>Lise og Tor Haugen</strong>
-                <span>Trondheim</span>
-              </footer>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="foer-etter">
-        <div class="container">
-          <h2>Før og etter</h2>
-          <p class="section-lead">Se hva riktig oppgjør kan bety for din bolig.</p>
-          <div class="foer-etter-grid">
-            <div class="foer-etter-pair">
-              <div class="foer-etter-col">
-                <span class="foer-etter-label foer">Før</span>
-                <img src="images/fuktskade-bad.jpeg" alt="Fuktskade på bad" loading="lazy">
-              </div>
-              <div class="foer-etter-col">
-                <span class="foer-etter-label etter">Etter</span>
-                <img src="images/resultat-bad.jpg" alt="Bad etter utbedring" loading="lazy">
-              </div>
+            <div class="case-col">
+              <div class="case-col-label">Hvordan vi jobbet</div>
+              <p>Alle feil dokumentert av håndverkere og takstmann. Forsikringsselskapet kom raskt med et lavt tilbud — vi dokumenterte videre og krevde full dekning.</p>
             </div>
-            <div class="foer-etter-pair">
-              <div class="foer-etter-col">
-                <span class="foer-etter-label foer">Før</span>
-                <img src="images/demontert-kjokken-vannskade.jpeg" alt="Kjøkken demontert etter vannskade" loading="lazy">
-              </div>
-              <div class="foer-etter-col">
-                <span class="foer-etter-label etter">Etter</span>
-                <img src="images/resultat-kjokken.jpg" alt="Kjøkken etter utbedring" loading="lazy">
-              </div>
+            <div class="case-col">
+              <div class="case-col-label">Resultat</div>
+              <div class="case-amount-before">Første tilbud: 70 000 kr</div>
+              <div class="case-amount-arrow">↓</div>
+              <div class="case-amount-final">230 000 kr</div>
+              <div class="case-amount-label">Endelig utbetaling</div>
             </div>
           </div>
         </div>
-      </section>
 
-      <section class="section" id="kontakt">
-        <div class="container contact-grid">
-          <div>
-            <h2>Send inn saken</h2>
-            <p class="form-speed">Det tar under 2 minutter å sende inn saken.</p>
-            <p>Beskriv hva som skjedde, når skaden skjedde og hva du har av bilder eller faktura. Vi svarer normalt innen 48 timer.</p>
-            <p class="privacy-link">Gratis vurdering. Ingen betaling hvis saken ikke fører frem.</p>
-          </div>
-          <form action="https://formspree.io/f/xgonvdrz" method="POST" enctype="multipart/form-data" id="claim-form" class="form-card">
-            <div class="form-progress-wrap" aria-hidden="true">
-              <div class="form-progress-bar" id="form-progress-bar"></div>
+        <div class="case-detail-card">
+          <div class="case-detail-header">
+            <h3 class="case-detail-title">Vi leste salgsoppgaven de ikke leste</h3>
+            <div class="case-tags">
+              <span class="case-tag">Eierskifteforsikring</span>
+              <span class="case-tag">Elektrisk</span>
+              <span class="case-tag">Drenering</span>
+              <span class="case-tag">FinKN</span>
             </div>
-            <p class="form-step-counter" id="form-step-counter" aria-live="polite">Steg 1 av 8</p>
+          </div>
+          <div class="case-cols">
+            <div class="case-col">
+              <div class="case-col-label">Bakgrunn</div>
+              <p>Bolig solgt med «nytt elektrisk anlegg». Kapasiteten holdt ikke mål — og alene ikke nok til å nå vesentlighetsterskelen.</p>
+            </div>
+            <div class="case-col">
+              <div class="case-col-label">Hvordan vi jobbet</div>
+              <p>Gikk gjennom hele salgsoppgaven punkt for punkt. Fant blant annet at drenering rundt hele huset ikke var utført slik oppgitt. Kombinert utgjorde manglene grunnlag for saken.</p>
+            </div>
+            <div class="case-col">
+              <div class="case-col-label">Resultat</div>
+              <p style="font-size:13px;color:var(--text-muted);margin-bottom:8px">Forsikringsselskapet nektet.<br>FinKN ga medhold.</p>
+              <div class="case-amount-final">200 000 kr</div>
+              <div class="case-amount-label">Utbetalt</div>
+            </div>
+          </div>
+        </div>
 
-            <div class="form-step" data-step="1">
-              <p class="step-question">Hva gjelder saken?</p>
-              <label for="caseType" class="sr-only">Hva gjelder saken?</label>
-              <select id="caseType" name="hva_gjelder_saken" required>
-                <option value="">Velg</option>
-                <option>Vannskade i bolig</option>
-                <option>Skade på kjøkken eller bad</option>
-                <option>Elektrisk skade eller overspenning</option>
-                <option>Stormskade på tomt eller bolig</option>
+      </div>
+      <p class="cases-note">Vi jobber med alle typer boligforsikring — ikke bare eierskifte.</p>
+    </div>
+  </section>
+
+  <!-- ══ AUTOMATION 3: STATUS TRACKER ══ -->
+  <section class="status-section" id="status-section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px">
+        <h2>Følg <em>saken din</em></h2>
+        <p class="section-sub" style="margin:8px auto 0">Tast inn e-posten du brukte da du sendte inn saken.</p>
+      </div>
+      <div class="status-wrap">
+        <div class="status-input-row">
+          <input class="status-input" type="email" id="status-email" placeholder="din@epost.no" onkeydown="if(event.key==='Enter')lookupStatus()">
+          <button class="status-btn" onclick="lookupStatus()">Sjekk status →</button>
+        </div>
+        <div class="status-card" id="status-card">
+          <div class="sc-header">
+            <div class="sc-title"><h4 id="sc-name">Din sak</h4><p id="sc-ref">Saksnummer: —</p></div>
+            <span class="sc-badge" id="sc-badge"></span>
+          </div>
+          <div id="sc-steps"></div>
+        </div>
+        <div class="status-notfound" id="status-notfound">
+          Ingen aktiv sak funnet. <a href="#kontakt" style="color:var(--amber);font-weight:600">Send inn saken gratis →</a>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:6px">Tips: prøv <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e682838b89a6958d8782838d948790c88889">[email&#160;protected]</a> for å se eksempel</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="kontakt">
+    <div class="container contact-grid">
+      <div class="contact-intro">
+        <h2>Send inn <em>saken</em></h2>
+        <p>Det tar under 2 minutter. Du får bekreftelse på e-post med saksnummer og konkret tilbakemelding innen 48 timer.</p>
+        <div class="protect-box">
+          <h3>Slik beskytter vi deg</h3>
+          <div class="protect-item"><div class="protect-check">✓</div><span>No cure no pay — du betaler ingenting hvis vi ikke vinner</span></div>
+          <div class="protect-item"><div class="protect-check">✓</div><span>Vi tar all kontakt med forsikringsselskapet på dine vegne</span></div>
+          <div class="protect-item"><div class="protect-check">✓</div><span>Vi deler aldri dine opplysninger med uvedkommende</span></div>
+        </div>
+        <div class="reassure-list">
+          <div class="reassure-item"><div class="ri">✓</div>Gratis vurdering uansett utfall</div>
+          <div class="reassure-item"><div class="ri">📧</div>Automatisk bekreftelse med saksnummer på e-post</div>
+          <div class="reassure-item"><div class="ri">🔔</div>Teamet varsles direkte med din prioritet</div>
+          <div class="reassure-item"><div class="ri">📍</div>Følg saksstatus selv under «Min sak»</div>
+          <div class="reassure-item"><div class="ri">✓</div>30 % provisjon kun ved seier</div>
+        </div>
+      </div>
+      <div>
+        <form id="claim-form">
+          <div class="form-card" id="form-inner">
+            <div class="form-header">
+              <div class="fh-title">Gratis saksvurdering</div>
+              <div class="fh-sub">Fyll ut — du får AI-vurdering og bekreftelse umiddelbart</div>
+            </div>
+            <div class="progress-wrap"><div class="progress-bar" id="prog-bar" style="width:12.5%"></div></div>
+            <p class="step-counter" id="step-counter">Steg 1 av 8</p>
+
+            <div class="form-step active" data-step="1">
+              <p class="step-q">Hva gjelder saken?</p>
+              <select id="f-type" required>
+                <option value="">Velg type skade</option>
+                <option>Vannskade i bolig</option><option>Skade på kjøkken eller bad</option>
+                <option>Elektrisk skade eller overspenning</option><option>Stormskade på tomt eller bolig</option>
                 <option>Annen boligskade</option>
               </select>
             </div>
-
             <div class="form-step" data-step="2">
-              <p class="step-question">Har du meldt skaden til forsikring?</p>
-              <label for="reportedToInsurance" class="sr-only">Har du meldt skaden til forsikring?</label>
-              <select id="reportedToInsurance" name="meldt_til_forsikring" required>
-                <option value="">Velg</option>
-                <option>Nei</option>
-                <option>Ja</option>
-                <option>Usikker</option>
+              <p class="step-q">Har du meldt skaden til forsikringen?</p>
+              <select id="f-reported" required>
+                <option value="">Velg</option><option>Ja</option><option>Nei</option><option>Usikker</option>
               </select>
             </div>
-
             <div class="form-step" data-step="3">
-              <p class="step-question">Hva er status på saken?</p>
-              <label for="caseStatus" class="sr-only">Hva er status på saken?</label>
-              <select id="caseStatus" name="saksstatus" required>
-                <option value="">Velg</option>
-                <option>Ikke meldt ennå</option>
-                <option>Fått avslag</option>
+              <p class="step-q">Hva er status på saken?</p>
+              <select id="f-status" required>
+                <option value="">Velg status</option>
+                <option>Ikke meldt ennå</option><option>Fått avslag</option>
                 <option>Fått oppgjør som virker for lavt</option>
-                <option>Saken er under behandling</option>
-                <option>Usikker</option>
+                <option>Saken er under behandling</option><option>Usikker</option>
               </select>
             </div>
-
             <div class="form-step" data-step="4">
-              <p class="step-question">Har du fått et oppgjør eller tilbud fra forsikringsselskapet?</p>
-              <label for="insuranceOffer" class="sr-only">Har du fått et oppgjør eller tilbud?</label>
-              <select id="insuranceOffer" name="oppgjor_eller_tilbud" required>
-                <option value="">Velg</option>
-                <option>Ja</option>
-                <option>Nei</option>
-                <option>Usikker</option>
+              <p class="step-q">Har du fått et oppgjør eller tilbud fra forsikringsselskapet?</p>
+              <select id="f-offer" required>
+                <option value="">Velg</option><option>Ja — jeg har fått et tilbud</option><option>Nei</option><option>Usikker</option>
               </select>
             </div>
-
             <div class="form-step" data-step="5">
-              <p class="step-question">Hva tror du det vil koste å reparere skaden?</p>
-              <label for="damageSize" class="sr-only">Hva tror du det vil koste?</label>
-              <select id="damageSize" name="skadestorrelse" required>
-                <option value="">Velg</option>
-                <option>0 til 70 000</option>
-                <option>70 000 til 150 000</option>
-                <option>150 000 til 500 000</option>
-                <option>Over 500 000</option>
-                <option>Usikker</option>
+              <p class="step-q">Hva tror du det vil koste å reparere skaden?</p>
+              <select id="f-size" required>
+                <option value="">Velg størrelsesorden</option>
+                <option value="lav">Under 70 000 kr</option>
+                <option value="mid">70 000 – 150 000 kr</option>
+                <option value="hoy">150 000 – 500 000 kr</option>
+                <option value="krit">Over 500 000 kr</option>
+                <option value="ukjent">Usikker</option>
               </select>
-              <p id="small-claim-note" class="field-note" hidden>Mindre skader ligger ofte nær egenandelen i forsikringen. De fleste sakene vi prioriterer ligger over 70 000 kroner. Du kan likevel sende inn saken hvis du er usikker.</p>
+              <p id="small-note" class="field-note" hidden>Skader under 70 000 kr ligger nær egenandelen. Send gjerne inn — vi gir en ærlig vurdering.</p>
             </div>
-
             <div class="form-step" data-step="6">
-              <p class="step-question">Har du bilder, takst, faktura eller annen dokumentasjon?</p>
-              <label for="hasDocs" class="sr-only">Har du dokumentasjon?</label>
-              <select id="hasDocs" name="dokumentasjon_status" required>
+              <p class="step-q">Har du bilder, takst, faktura eller annen dokumentasjon?</p>
+              <select id="f-docs" required>
                 <option value="">Velg</option>
-                <option>Ja</option>
-                <option>Nei</option>
-                <option>Delvis</option>
+                <option value="god">Ja — har god dokumentasjon</option>
+                <option value="delvis">Delvis — noe dokumentasjon</option>
+                <option value="ingen">Nei — lite dokumentasjon</option>
               </select>
             </div>
-
             <div class="form-step" data-step="7">
-              <p class="step-question">Dine kontaktopplysninger</p>
-              <label for="name">Navn</label>
-              <input id="name" name="navn" type="text" required>
-              <label for="phone">Telefon</label>
-              <input id="phone" name="telefon" type="tel" inputmode="tel" required>
-              <label for="email">E-post</label>
-              <input id="email" name="email" type="email" required>
+              <p class="step-q">Dine kontaktopplysninger</p>
+              <label>Navn</label><input id="f-name" type="text" placeholder="Ola Nordmann" required>
+              <label>Telefon</label><input id="f-phone" type="tel" placeholder="900 00 000" required>
+              <label>E-post</label><input id="f-email" type="email" placeholder="ola@example.com" required>
             </div>
-
             <div class="form-step" data-step="8">
-              <p class="step-question">Beskriv skaden kort</p>
-              <label for="message">Hva skjedde, og hva fikk du eventuelt tilbud om?</label>
-              <textarea id="message" name="beskrivelse" rows="4" required></textarea>
-              <label for="dokument">Last opp bilde eller filer (valgfritt)</label>
-              <input id="dokument" name="dokument" type="file" accept="image/*,.pdf,.doc,.docx" multiple>
+              <p class="step-q">Beskriv skaden kort</p>
+              <label>Hva skjedde, og hva fikk du eventuelt tilbud om?</label>
+              <textarea id="f-desc" rows="4" placeholder="F.eks: Vannskade fra oppvaskmaskin mars 2024. Forsikringen tilbød 45 000 kr men reparasjon koster 120 000 kr..." required></textarea>
+              <label>Last opp bilde eller filer (valgfritt)</label>
+              <input type="file" accept="image/*,.pdf,.doc,.docx" multiple>
               <label class="check-label">
-                <input id="consent" name="consent" type="checkbox" required>
-                Jeg samtykker til at opplysningene brukes til vurdering av saken og at jeg kan kontaktes på oppgitt telefon og e-post.
+                <input id="f-consent" type="checkbox" required>
+                <span>Jeg samtykker til at opplysningene brukes til vurdering av saken og at jeg kan kontaktes.</span>
               </label>
-              <p class="privacy-link">Les <a href="#" onclick="showPage('personvern'); return false;">personvernerklæring</a>.</p>
+              <p style="font-size:12px;color:var(--text-muted);margin-top:8px">Les <a href="#" onclick="showPage('personvern');return false;" style="color:var(--amber)">personvernerklæringen</a>.</p>
             </div>
-
-            <input type="hidden" id="priorityLevel" name="prioritet_internt" value="Normal">
-
+            <input type="hidden" id="f-priority" value="Normal">
             <div class="form-nav">
-              <button type="button" class="btn btn-ghost" id="form-prev" hidden>Tilbake</button>
-              <button type="button" class="btn" id="form-next">Neste &rarr;</button>
-              <button type="submit" class="btn" id="form-submit" hidden>Send saken</button>
+              <button type="button" class="btn-fb" id="form-prev" style="display:none">← Tilbake</button>
+              <button type="button" class="btn-fp" id="form-next">Neste →</button>
             </div>
+            <p class="form-footnote">Gratis vurdering · Ingen betaling uten utbetaling · <a href="#" onclick="showPage('personvern');return false;" style="color:var(--text-muted)">Personvern</a></p>
+          </div>
+        </form>
 
-            <p class="form-trust">Gratis vurdering. Ingen betaling hvis saken ikke fører frem.</p>
-          </form>
-        </div>
-      </section>
+        <!-- SUCCESS STATE -->
+        <div class="form-card form-success" id="form-success">
+          <div class="succ-header">
+            <div class="succ-icon">✓</div>
+            <h3>Saken er mottatt!</h3>
+            <p>Her er hva som skjer automatisk nå:</p>
+            <div class="succ-ref" id="succ-ref">SK-2026-0000</div>
+          </div>
 
-      <section class="section" id="faq">
-        <div class="container narrow">
-          <h2>Vanlige spørsmål om skade og forsikring</h2>
-          <h3>Dekker forsikringen vannskade i gulv og parkett?</h3>
-          <p>Mange vannskader i bolig kan være dekket hvis skaden oppstod plutselig. Forsikringsselskapet behandler ofte selve lekkasjen og følgeskadene som to separate skader — begge kan gi rett til erstatning.</p>
-          <h3>Hva gjør jeg hvis forsikringen har gitt for lav utbetaling?</h3>
-          <p>Hvis oppgjøret er lavere enn kostnaden for å reparere skaden, kan det være grunnlag for å klage. Send inn saken til oss, så vurderer vi gratis om du har krav på mer.</p>
-          <h3>Kan jeg klage på forsikringsoppgjøret?</h3>
-          <p>Ja. Du har rett til å klage på forsikringsoppgjøret. Vi hjelper deg med å vurdere om saken har grunnlag og bistår deg gjennom prosessen — du betaler kun hvis vi lykkes.</p>
-          <h3>Kan jeg sende inn en sak som ikke ble meldt med en gang?</h3>
-          <p>Ja, i noen tilfeller kan saken fortsatt vurderes selv om den ikke ble meldt umiddelbart. Det er særlig aktuelt hvis du har bilder, faktura eller annen dokumentasjon på skaden.</p>
-          <h3>Hvilke saker hjelper skadekrav.no med?</h3>
-          <p>Vi hjelper med saker som gjelder vannskade, stormskade, andre boligskader, for lav utbetaling fra forsikring, og skader som ikke ble meldt inn da de oppstod. Vi prioriterer saker der utbedringskostnaden er over 70 000 kroner.</p>
-          <h3>Hva koster det å bruke skadekrav.no?</h3>
-          <p>Vurderingen er alltid gratis. Hvis vi tar saken videre og får gjennomslag, er vår provisjon 30 prosent av utbetalingen. Får vi ikke gjennomslag, betaler du ingenting.</p>
-        </div>
-      </section>
+          <!-- AUTOMATION 1: SCORE -->
+          <div class="ai-score-box">
+            <h4>📋 Vurdering av saken din</h4>
+            <p id="ai-score-text">Vurderer saken basert på svarene dine...</p>
+            <div class="score-meter"><div class="score-meter-fill" id="score-fill" style="width:0%"></div></div>
+            <div class="score-row"><span id="score-pct" style="font-weight:600">—</span><span style="color:var(--text-muted)">av 100 mulige poeng</span></div>
+            <div class="score-verdict" id="score-verdict"></div>
+          </div>
 
-    </main>
-  </div>
-
-  <!-- ===== OM OSS ===== -->
-  <div id="page-om-oss" class="page">
-    <main>
-      <section class="section">
-        <div class="container narrow">
-          <h1>Om skadekrav.no</h1>
-          <p class="lead">Vi er ikke advokater. Vi er ikke et forsikringsselskap. Vi er vanlige folk som har lært systemet å kjenne gjennom mange år med egne kamper — og som nå bruker den kunnskapen til å hjelpe deg.</p>
-
-          <h2>Historien bak</h2>
-          <p>Skadekrav.no ble startet av Hans Ivar, bosatt i Oslo-området. Bakgrunnen er ikke juridisk utdanning eller erfaring fra forsikringsbransjen — men noe som kanskje er mer verdifullt: år med egne kamper mot det norske forsikringssystemet.</p>
-          <p>Vannskader, stormskader, forsikringsavslag og oppgjør som var langt lavere enn det skadene faktisk kostet å utbedre. Som vanlig boligeier lærte Hans Ivar tidlig at forsikringsselskapene ikke alltid gjør jobben sin på vegne av deg. De har egne takstmenn, egne prosedyrer og egne interesser. Og de fleste av oss vet ikke at vi har rett til å utfordre dem.</p>
-          <p>Gjennom mange år med egne saker — for seg selv og familien — ble regelverket, klagemulighetene og de avgjørende argumentene innlært fra innsiden. Ikke fra en lærebok, men fra virkeligheten. Det er denne erfaringen som nå tilbys deg.</p>
-
-          <h2>Hva vi gjør</h2>
-          <p>Vi vurderer saken din, ser på dokumentasjonen og gir deg en ærlig tilbakemelding på om du har grunnlag for å gå videre. Hvis vi tror saken kan føre frem, følger vi den opp på dine vegne.</p>
-          <p>Vi er ikke advokater og tilbyr ikke juridisk rådgivning. Vi er erfarne privatpersoner som kjenner forsikringssystemet godt og vet hvordan man kommuniserer med forsikringsselskaper for å få rettferdige oppgjør.</p>
-
-          <h2>Hvem vi hjelper</h2>
-          <ul class="event-list">
-            <li>Boligeiere som har fått avslag de ikke forstår</li>
-            <li>Folk som har fått et oppgjør som ikke dekker den faktiske skaden</li>
-            <li>De som ikke meldte skaden med en gang, men fortsatt kan ha krav</li>
-            <li>Alle som føler seg overkjørt av forsikringsselskapet sitt</li>
-          </ul>
-
-          <h2>Vår modell — ingen risiko for deg</h2>
-          <p>Vi tar ingen betaling for vurderingen. Hvis vi vurderer at saken ikke har grunnlag, koster det deg ingenting. Hvis vi tar saken og vinner frem, tar vi 30 prosent av det vi henter inn for deg. Det betyr at vi bare tjener penger hvis du gjør det. Det er slik det skal være.</p>
-
-          <div class="cta-group">
-            <a class="btn" href="#" onclick="showPage('forside'); return false;">Send inn saken gratis</a>
+          <!-- AUTOMATION TIMELINE: 2+3+4 -->
+          <div class="atl">
+            <div class="atl-title">Automatisert oppfølging</div>
+            <div class="atl-item">
+              <div class="atl-dot done">✓</div>
+              <div class="atl-info"><h5>Sak opprettet</h5><p>Lagret med saksnummer, score og prioritet</p></div>
+              <span class="atl-time">Nå</span>
+            </div>
+            <div class="atl-item">
+              <div class="atl-dot running" id="atl-email-dot">●</div>
+              <div class="atl-info"><h5>Bekreftelse sendes på e-post</h5><p id="atl-email-p">Sender til <span id="atl-addr"></span>...</p></div>
+              <span class="atl-time">~1 min</span>
+            </div>
+            <div class="atl-item">
+              <div class="atl-dot running" id="atl-sms-dot">●</div>
+              <div class="atl-info"><h5>Internt varsel til teamet</h5><p id="atl-sms-p">SMS + e-post med prioritet</p></div>
+              <span class="atl-time">~1 min</span>
+            </div>
+            <div class="atl-item">
+              <div class="atl-dot wait" id="atl-review-dot">○</div>
+              <div class="atl-info"><h5>Manuell gjennomgang</h5><p>Rådgiver vurderer saken</p></div>
+              <span class="atl-time">Innen 48 t</span>
+            </div>
+            <div class="atl-item">
+              <div class="atl-dot wait">○</div>
+              <div class="atl-info"><h5>Du kontaktes med svar</h5><p>Telefon eller e-post med konkret tilbakemelding</p></div>
+              <span class="atl-time">Innen 48 t</span>
+            </div>
+          </div>
+          <div style="padding:0 24px 24px">
+            <button class="btn btn-ghost" style="width:100%;justify-content:center" onclick="gotoId('status-section')">Følg saken under «Min sak» →</button>
           </div>
         </div>
-      </section>
-    </main>
-  </div>
-
-  <!-- ===== PERSONVERN ===== -->
-  <div id="page-personvern" class="page">
-    <main>
-      <section class="section">
-        <div class="container narrow">
-          <h1>Personvernerklæring</h1>
-          <p class="lead">Sist oppdatert: mars 2026</p>
-          <p>Skadekrav.no tar personvern på alvor. Denne erklæringen forklarer hvilke personopplysninger vi samler inn, hvorfor vi gjør det, og hvilke rettigheter du har.</p>
-
-          <h2>1. Behandlingsansvarlig</h2>
-          <ul class="event-list">
-            <li>Virksomhet: Skadekrav.no</li>
-            <li>Sted: Oslo, Norge</li>
-            <li>E-post: post@skadekrav.no</li>
-          </ul>
-          <p><em>Org.nr. og full forretningsadresse legges til når virksomheten er registrert i Brønnøysundregisteret.</em></p>
-
-          <h2>2. Hvilke opplysninger samler vi inn</h2>
-          <ul class="event-list">
-            <li>Navn, telefonnummer og e-postadresse</li>
-            <li>Beskrivelse av skaden og saken din</li>
-            <li>Eventuelle opplastede filer (bilder, faktura, dokumenter)</li>
-            <li>Svar på spørsmål om skadetype, forsikringsstatus og skadeomfang</li>
-          </ul>
-
-          <h2>3. Formål og rettslig grunnlag</h2>
-          <p>Vi behandler opplysningene for å vurdere saken din, kontakte deg med svar, og bistå deg i en eventuell klagesak mot forsikringsselskapet. Rettslig grunnlag er ditt samtykke (GDPR artikkel 6 nr. 1 bokstav a).</p>
-
-          <h2>4. Lagringstid</h2>
-          <p>Opplysninger lagres i inntil 12 måneder etter avsluttet sak. Saker som ikke følges opp videre slettes innen 3 måneder.</p>
-
-          <h2>5. Hvem deler vi opplysningene med</h2>
-          <p><strong>Formspree:</strong> Skjemaet bruker Formspree (formspree.io), et amerikansk selskap, som databehandler på våre vegne. Overføringen er basert på EUs standardkontraktsvilkår (SCCs). Les mer på formspree.io/legal/privacy-policy.</p>
-          <p><strong>Forsikringsselskaper:</strong> Opplysninger deles kun med ditt eksplisitte samtykke og på dine vegne i forbindelse med klagesaker.</p>
-
-          <h2>6. Dine rettigheter</h2>
-          <p>Du har rett til innsyn, retting, sletting og tilbaketrekking av samtykke. Du kan også klage til Datatilsynet på datatilsynet.no. Kontakt oss på post@skadekrav.no.</p>
-
-          <h2>7. Informasjonskapsler</h2>
-          <p>Skadekrav.no bruker ikke informasjonskapsler til sporing eller markedsføring.</p>
-
-          <h2>8. Kontakt</h2>
-          <p>Spørsmål om personvern? Ta kontakt på post@skadekrav.no.</p>
-
-          <div class="cta-group" style="margin-top: 2rem;">
-            <a class="btn" href="#" onclick="showPage('forside'); return false;">Tilbake til forsiden</a>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <p class="footer-brand">
-        <img src="images/logo-skadekrav.svg" alt="Logo for Skadekrav.no" width="28" height="28">
-        <strong>skadekrav.no</strong>
-      </p>
-      <p>Tjeneste for vurdering av forsikringsrelaterte skadesaker · Oslo, Norge</p>
-      <a href="#" onclick="showPage('personvern'); return false;">Personvern</a>
-      <a href="#" onclick="showPage('om-oss'); return false;">Om oss</a>
-      <a href="#" onclick="showPage('forside'); scrollTo('kontakt'); return false;">Kontakt</a>
+      </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="script.js"></script>
+  <section id="faq">
+    <div class="narrow">
+      <h2>Vanlige <em>spørsmål</em></h2>
+      <div style="margin-top:32px">
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Dekker forsikringen vannskade i gulv og parkett?<span class="faq-icon">+</span></div><div class="faq-a">Mange vannskader i bolig kan være dekket hvis skaden oppstod plutselig. Forsikringsselskapet behandler ofte selve lekkasjen og følgeskadene som to separate skader — begge kan gi rett til erstatning.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hva gjør jeg hvis forsikringen har gitt for lav utbetaling?<span class="faq-icon">+</span></div><div class="faq-a">Hvis oppgjøret er lavere enn reparasjonskostnaden kan det være grunnlag for klage. Send inn saken, så vurderer vi gratis om du har krav på mer.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kan jeg klage på forsikringsoppgjøret?<span class="faq-icon">+</span></div><div class="faq-a">Ja. Du har rett til å klage. Vi hjelper deg med å vurdere om saken har grunnlag og bistår gjennom prosessen — du betaler kun hvis vi lykkes.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hva er Finansklagenemnda?<span class="faq-icon">+</span></div><div class="faq-a">Finansklagenemnda (FinKN) er et uavhengig klageorgan som behandler tvister mellom forbrukere og forsikringsselskaper. Nemnda behandler over 1 500 forsikringsklager i året, og mange klagere får medhold.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hva koster det?<span class="faq-icon">+</span></div><div class="faq-a">Vurderingen er alltid gratis. Får vi gjennomslag er provisjonen 30 % av det vi henter inn for deg. Lykkes vi ikke, betaler du ingenting.</div></div>
+      </div>
+    </div>
+  </section>
 
+</main>
+</div>
+
+<!-- OM OSS -->
+<div id="page-om-oss" class="page">
+<main>
+  <div style="background:var(--navy);padding:72px 0 60px"><div class="narrow">
+    <p class="hero-kicker" style="margin-bottom:16px">Hvem er vi</p>
+    <h1 style="color:var(--white)">Om skadekrav.no</h1>
+    <p class="lead" style="color:#94a3b8">Vi er ikke advokater. Vi er boligeiere som lærte systemet på den harde måten — og bruker nå kunnskapen til å hjelpe deg.</p>
+  </div></div>
+  <div style="padding:60px 0"><div class="narrow">
+    <h2>Historien bak</h2>
+    <p style="font-size:16px;color:var(--text-mid);line-height:1.75;margin-bottom:16px">Skadekrav.no ble startet av Hans Ivar. Bakgrunnen er ikke juridisk utdanning eller erfaring fra forsikringsbransjen — men noe som kanskje er mer verdifullt: år med egne kamper mot det norske forsikringssystemet.</p>
+    <p style="font-size:16px;color:var(--text-mid);line-height:1.75;margin-bottom:16px">Som vanlig boligeier lærte Hans Ivar tidlig at forsikringsselskapene ikke alltid gjør jobben sin på vegne av deg. Gjennom mange år med egne saker ble regelverket og klagemulighetene innlært fra innsiden. Det er denne erfaringen som nå tilbys deg.</p>
+    <h2 style="margin-top:36px">Vår modell</h2>
+    <p style="font-size:16px;color:var(--text-mid);line-height:1.75;margin-bottom:24px">Vi tar ingen betaling for vurderingen. Tar vi saken og vinner frem, tar vi 30 % av det vi henter inn. Lykkes vi ikke, betaler du ingenting.</p>
+    <div class="cta-group">
+      <a class="btn btn-primary" href="#kontakt" onclick="showPage('forside');return false;">Send inn saken gratis →</a>
+      <a class="btn btn-ghost" href="#" onclick="showPage('forside');return false;">Tilbake</a>
+    </div>
+  </div></div>
+</main>
+</div>
+
+<!-- PERSONVERN -->
+<div id="page-personvern" class="page">
+<main><div style="padding:60px 0"><div class="narrow">
+  <h1 style="font-family:var(--fd);font-size:clamp(26px,3.5vw,38px);font-weight:700;color:var(--navy);margin-bottom:8px">Personvernerklæring</h1>
+  <p style="color:var(--text-muted);font-size:14px;margin-bottom:28px">Sist oppdatert: mars 2026</p>
+  <p style="font-size:15px;color:var(--text-mid);line-height:1.75;margin-bottom:16px">Vi samler inn navn, telefon, e-post og saksbeskrivelse for å vurdere og følge opp din forsikringssak. Rettslig grunnlag er ditt samtykke (GDPR art. 6 nr. 1 bokstav a). Opplysninger slettes innen 12 måneder etter avsluttet sak. Vi deler ikke opplysninger uten ditt samtykke. Vi bruker ikke informasjonskapsler til sporing. Kontakt: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d5bebabba1b4bea195a6beb4b1b0bea7b4a3fbbbba">[email&#160;protected]</a></p>
+  <div class="cta-group" style="margin-top:24px"><a class="btn btn-ghost" href="#" onclick="showPage('forside');return false;">← Tilbake</a></div>
+</div></div></main>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><div class="logo-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="#f59e0b"/></svg></div><span class="footer-brand-name">skadekrav.no</span></div>
+        <p class="footer-tagline">Hjelp med forsikringskrav ved boligskader i Norge. No cure, no pay.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasjon</h4>
+        <a href="#" onclick="showPage('forside');gotoId('slik');return false;">Slik fungerer det</a>
+        <a href="#" onclick="showPage('forside');gotoId('status-section');return false;">Min sak</a>
+        <a href="#" onclick="showPage('forside');gotoId('faq');return false;">FAQ</a>
+        <a href="#" onclick="showPage('om-oss');return false;">Om oss</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="#kontakt" onclick="showPage('forside');return false;">Send inn saken</a>
+        <a href="/cdn-cgi/l/email-protection#f19a9e9f85909a85b1829a9095949a839087df9f9e"><span class="__cf_email__" data-cfemail="b2d9dddcc6d3d9c6f2c1d9d3d6d7d9c0d3c49cdcdd">[email&#160;protected]</span></a>
+        <a href="#" onclick="showPage('personvern');return false;">Personvern</a>
+        <a href="fullmakt.html">Fullmaktsskjema</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Skadekrav.no</span>
+      <span>Vi er ikke advokater og tilbyr ikke juridisk rådgivning</span>
+    </div>
+  </div>
+</footer>
+
+<!-- AI CHAT FAB -->
+<div class="ai-fab">
+  <div class="ai-bubble" id="ai-bubble">Lurer du på om saken din holder? Spør meg!</div>
+  <button class="ai-btn" onclick="toggleChat()">🤖</button>
+</div>
+<div class="ai-panel" id="ai-panel">
+  <div class="ai-ph">
+    <div class="ai-ph-info"><div class="ai-dot"></div><div><h4>Skadekrav-assistenten</h4><p>Gratis første vurdering av saken din</p></div></div>
+    <button class="ai-close" onclick="toggleChat()">×</button>
+  </div>
+  <div class="ai-msgs" id="ai-msgs">
+    <div class="ai-msg bot">Beskriv kort hva som skjedde — så gir vi deg en første vurdering.</div>
+  </div>
+  <div class="ai-input-row">
+    <input class="ai-input" id="ai-input" type="text" placeholder="Beskriv skaden din..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button class="ai-send" onclick="sendChat()">→</button>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── NAV ──
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const el=document.getElementById('page-'+id);
+  if(el){el.classList.add('active');window.scrollTo({top:0,behavior:'instant'});}
+}
+function gotoId(id){
+  setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},60);
+}
+
+// ── FORM ──
+let step=1;const total=8;
+function updateForm(){
+  document.querySelectorAll('.form-step').forEach(s=>s.classList.remove('active'));
+  const a=document.querySelector(`.form-step[data-step="${step}"]`);
+  if(a)a.classList.add('active');
+  document.getElementById('prog-bar').style.width=(step/total*100)+'%';
+  document.getElementById('step-counter').textContent=`Steg ${step} av ${total}`;
+  document.getElementById('form-prev').style.display=step>1?'block':'none';
+  const nxt=document.getElementById('form-next');
+  if(step===total){nxt.textContent='Send inn saken →';nxt.onclick=submitForm;}
+  else{nxt.textContent='Neste →';nxt.onclick=nextStep;}
+}
+function nextStep(){
+  const a=document.querySelector(`.form-step[data-step="${step}"]`);
+  const r=a&&a.querySelector('select[required],input[required],textarea[required]');
+  if(r&&!r.value){r.focus();r.style.borderColor='#ef4444';setTimeout(()=>r.style.borderColor='',1500);return;}
+  if(step===5){
+    const v=document.getElementById('f-size').value;
+    document.getElementById('small-note').hidden=v!=='lav';
+    const pm={lav:'Lav',mid:'Normal',hoy:'Høy',krit:'Kritisk',ukjent:'Normal'};
+    document.getElementById('f-priority').value=pm[v]||'Normal';
+  }
+  if(step<total){step++;updateForm();}
+}
+function prevStep(){if(step>1){step--;updateForm();}}
+document.getElementById('form-prev').addEventListener('click',prevStep);
+updateForm();
+
+// ── AUTOMATION 1: AI SCORING ──
+function calcScore(){
+  let s=0;
+  const status=document.getElementById('f-status').value;
+  const offer=document.getElementById('f-offer').value;
+  const size=document.getElementById('f-size').value;
+  const docs=document.getElementById('f-docs').value;
+  const reported=document.getElementById('f-reported').value;
+  if(status==='Fått avslag')s+=25;
+  else if(status==='Fått oppgjør som virker for lavt')s+=20;
+  else if(status==='Saken er under behandling')s+=10;
+  else if(status==='Ikke meldt ennå')s+=5;
+  if(offer==='Ja — jeg har fått et tilbud')s+=20;
+  else if(offer==='Nei')s+=10;
+  if(size==='krit')s+=25;else if(size==='hoy')s+=20;else if(size==='mid')s+=15;else if(size==='lav')s+=5;
+  if(docs==='god')s+=20;else if(docs==='delvis')s+=10;else if(docs==='ingen')s+=2;
+  if(reported==='Ja')s+=10;
+  return Math.min(s,100);
+}
+
+function renderScore(score){
+  setTimeout(()=>{
+    const fill=document.getElementById('score-fill');
+    fill.style.width=score+'%';
+    fill.style.background=score>=65?'#22c55e':score>=40?'#f59e0b':'#ef4444';
+    document.getElementById('score-pct').textContent=score+' poeng';
+    document.getElementById('score-pct').style.color=score>=65?'#166534':score>=40?'#d97706':'#b91c1c';
+    const verd=document.getElementById('score-verdict');
+    if(score>=65){
+      document.getElementById('ai-score-text').textContent='Saken har trekk som tyder på godt grunnlag for klage.';
+      verd.textContent='✓ Godt grunnlag — vi følger trolig opp';verd.className='score-verdict sv-high';
+    }else if(score>=40){
+      document.getElementById('ai-score-text').textContent='Saken kan ha grunnlag, men trenger nærmere vurdering.';
+      verd.textContent='⚡ Mulig grunnlag — rådgiver vurderer';verd.className='score-verdict sv-mid';
+    }else{
+      document.getElementById('ai-score-text').textContent='Noen svake punkter — vi gir deg en ærlig vurdering uansett.';
+      verd.textContent='ℹ Svakt grunnlag — vi ser nærmere på det';verd.className='score-verdict sv-low';
+    }
+  },700);
+}
+
+// ── MAKE.COM WEBHOOK ──
+// Bytt ut denne URL-en med din faktiske Make.com webhook-URL
+const MAKE_URL='https://hook.eu1.make.com/exn63x45ulgoznisgmoim86tp66in96i';
+
+async function postMake(payload){
+  try{
+    await fetch(MAKE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),mode:'no-cors'});
+  }catch(e){console.log('[Make.com payload]',payload);}
+}
+
+// ── SUBMIT + ALLE 4 AUTOMATISERINGER ──
+function submitForm(){
+  if(!document.getElementById('f-consent').checked){document.getElementById('f-consent').focus();return;}
+  const ref='SK-'+new Date().getFullYear()+'-'+Math.floor(1000+Math.random()*9000);
+  const email=document.getElementById('f-email').value;
+  const name=document.getElementById('f-name').value;
+  const phone=document.getElementById('f-phone').value;
+  const priority=document.getElementById('f-priority').value;
+  const caseType=document.getElementById('f-type').value;
+  const desc=document.getElementById('f-desc').value;
+  const score=calcScore();
+
+  // Vis success-state
+  document.getElementById('form-inner').style.display='none';
+  const succ=document.getElementById('form-success');
+  succ.classList.add('visible');
+  document.getElementById('succ-ref').textContent=ref;
+  document.getElementById('atl-addr').textContent=email;
+
+  // AUTOMATION 1 — AI score render
+  renderScore(score);
+
+  // AUTOMATION 2 — Bekreftelse til kunden (Make.com → Gmail/Outlook)
+  postMake({
+    type:'kunde_bekreftelse',
+    to:email,name,ref,score,priority,caseType,
+    subject:`Saken din er mottatt — ${ref}`,
+    template:'bekreftelse_v1'
+  });
+
+  // AUTOMATION 3 — Internt varsel til teamet (Make.com → SMS + e-post)
+  postMake({
+    type:'internt_varsel',
+    ref,client_name:name,client_email:email,client_phone:phone,
+    score,priority,caseType,desc,
+    notify_email:'kontakt@skadekrav.no',
+    notify_sms:'+4799999999'  // ← bytt til ditt nummer
+  });
+
+  // AUTOMATION 4 — Lagre i status-tracker (Make.com → Google Sheets)
+  postMake({
+    type:'opprett_sak',
+    ref,email:email.toLowerCase(),name,score,priority,caseType,
+    status:'Mottatt',created:new Date().toLocaleDateString('nb-NO')
+  });
+
+  // Lagre lokalt for demo-status
+  sessionStorage.setItem('sak_'+email.toLowerCase(),JSON.stringify(
+    {ref,name,score,priority,created:new Date().toLocaleDateString('nb-NO'),activeStep:1}
+  ));
+
+  // Animer timeline
+  setTimeout(()=>{
+    document.getElementById('atl-email-dot').className='atl-dot done';
+    document.getElementById('atl-email-dot').textContent='✓';
+    document.getElementById('atl-email-p').textContent='Bekreftelses-e-post sendt til '+email;
+  },2000);
+  setTimeout(()=>{
+    document.getElementById('atl-sms-dot').className='atl-dot done';
+    document.getElementById('atl-sms-dot').textContent='✓';
+    document.getElementById('atl-sms-p').textContent='Teamet varslet — prioritet: '+priority;
+    document.getElementById('atl-review-dot').className='atl-dot running';
+    document.getElementById('atl-review-dot').textContent='●';
+  },3800);
+}
+
+// ── AUTOMATION 4: STATUS TRACKER ──
+function lookupStatus(){
+  const email=document.getElementById('status-email').value.trim().toLowerCase();
+  if(!email)return;
+  const card=document.getElementById('status-card');
+  const notfound=document.getElementById('status-notfound');
+  card.classList.remove('visible');notfound.classList.remove('visible');
+
+  // Sjekk sessionStorage (saker sendt inn denne sesjonen)
+  const stored=sessionStorage.getItem('sak_'+email);
+  if(stored){
+    renderStatusCard(JSON.parse(stored));
+    card.classList.add('visible');return;
+  }
+  // Demo-sak
+  if(email==='demo@skadekrav.no'){
+    renderStatusCard({ref:'SK-2026-4821',name:'Ola Nordmann',score:74,priority:'Høy',created:'15.03.2026',activeStep:2});
+    card.classList.add('visible');return;
+  }
+  // I produksjon: kall Make.com webhook som slår opp i Google Sheets
+  // og returnerer sak-data via en GET-endpoint
+  notfound.classList.add('visible');
+}
+
+function renderStatusCard(data){
+  document.getElementById('sc-name').textContent=(data.name||'Din sak')+' — '+( data.priority||'Normal')+' prioritet';
+  document.getElementById('sc-ref').textContent='Saksnummer: '+(data.ref||'—');
+  const score=data.score||0;
+  const badge=document.getElementById('sc-badge');
+  badge.textContent=score>=65?'Godt grunnlag':score>=40?'Mulig grunnlag':'Under vurdering';
+  badge.style.cssText=score>=65?'background:#dcfce7;color:#166534;font-size:12px;font-weight:700;padding:5px 12px;border-radius:8px':'background:#fef3c7;color:#d97706;font-size:12px;font-weight:700;padding:5px 12px;border-radius:8px';
+  const active=data.activeStep!=null?data.activeStep:1;
+  const steps=[
+    {label:'Sak mottatt',desc:'Innsendt '+(data.created||'—')},
+    {label:'Under vurdering',desc:'Rådgiver gjennomgår dokumentasjon'},
+    {label:'Kontaktet klient',desc:'Tilbakemelding gitt'},
+    {label:'Klage sendt FinKN',desc:'Venter på behandling'},
+    {label:'Avgjørelse',desc:'Sluttresultat'},
+  ];
+  const el=document.getElementById('sc-steps');
+  el.innerHTML='';
+  steps.forEach((s,i)=>{
+    const state=i<active?'done':i===active?'active':'pending';
+    const icon=state==='done'?'✓':state==='active'?'●':'○';
+    const bHtml=state==='done'?'<span class="ss-badge done">Fullført</span>':state==='active'?'<span class="ss-badge active">Pågår nå</span>':'';
+    el.innerHTML+=`<div class="ss-item"><div class="ss-dot ${state}">${icon}</div><div class="ss-body"><h5>${s.label}${bHtml}</h5><p>${s.desc}</p></div></div>`;
+  });
+}
+
+// ── FAQ ──
+function toggleFaq(el){
+  const item=el.parentElement;const open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+}
+
+// ── AI CHAT ──
+let chatOpen=false;let chatHistory=[];
+function toggleChat(){
+  chatOpen=!chatOpen;
+  document.getElementById('ai-panel').classList.toggle('open',chatOpen);
+  if(chatOpen){document.getElementById('ai-bubble').style.display='none';document.getElementById('ai-input').focus();}
+}
+function sendChat(){
+  const inp=document.getElementById('ai-input');const txt=inp.value.trim();if(!txt)return;
+  inp.value='';addChatMsg(txt,'user');chatHistory.push({role:'user',content:txt});
+  showChatTyping();callClaude();
+}
+function addChatMsg(txt,role,isHtml=false){
+  const msgs=document.getElementById('ai-msgs');
+  const div=document.createElement('div');div.className='ai-msg '+role;
+  if(isHtml)div.innerHTML=txt;else div.textContent=txt;
+  msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;return div;
+}
+function showChatTyping(){
+  const msgs=document.getElementById('ai-msgs');
+  const div=document.createElement('div');div.className='ai-typing';div.id='ai-typing';
+  div.innerHTML='<div class="dots"><span></span><span></span><span></span></div>';
+  msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
+}
+function removeChatTyping(){const t=document.getElementById('ai-typing');if(t)t.remove();}
+
+async function callClaude(){
+  const sys=`Du er en hjelpsom assistent for skadekrav.no — et norsk no-cure-no-pay-selskap som hjelper boligeiere med forsikringskrav mot norske forsikringsselskaper.
+
+Vurder saken og still ett oppfølgingsspørsmål om gangen. Svar alltid på norsk, maks 3 korte setninger.
+
+Når du har nok informasjon (skadetype, status, beløp og dokumentasjon), avslutt svaret ditt med:
+SCORE:[0-100]:[kort norsk begrunnelse]
+
+Scoringskriterier:
+- Plutselig skade (vann/storm/elektrisk) = høyere score
+- Skriftlig avslag fra forsikring = +25 poeng
+- God dokumentasjon (bilder, takst, faktura) = +20 poeng
+- Krav over 70 000 kr = +15-25 poeng
+- Gradvis skade eller manglende dokumentasjon = lavere score`;
+
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:sys,messages:chatHistory})
+    });
+    const data=await r.json();
+    removeChatTyping();
+    const full=data.content?.map(b=>b.text||'').join('')||'Beklager, noe gikk galt.';
+    const scoreMatch=full.match(/SCORE:(\d+):(.+)/);
+    const clean=full.replace(/SCORE:\d+:.+/,'').trim();
+    if(clean)addChatMsg(clean,'bot');
+    chatHistory.push({role:'assistant',content:full});
+    if(scoreMatch){
+      const sc=parseInt(scoreMatch[1]);const reason=scoreMatch[2].trim();
+      const color=sc>=65?'#22c55e':sc>=40?'#f59e0b':'#ef4444';
+      const label=sc>=65?'Godt grunnlag':sc>=40?'Mulig grunnlag':'Svakt grunnlag';
+      addChatMsg(`<div class="chat-score">
+        <div style="font-weight:600;color:var(--navy);margin-bottom:4px">Foreløpig vurdering</div>
+        <div class="csb-bg"><div class="csb-fill" style="width:${sc}%;background:${color}"></div></div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;margin-top:4px;margin-bottom:6px">
+          <span style="color:${color};font-weight:700">${label} — ${sc}/100</span>
+        </div>
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px">${reason}</div>
+        <button class="chat-cta" onclick="gotoId('kontakt');toggleChat()">Fyll ut skjemaet gratis →</button>
+      </div>`,'bot',true);
+    }
+  }catch(e){
+    removeChatTyping();
+    addChatMsg('Beklager, det oppstod en feil. Prøv å beskrive saken din på nytt.','bot');
+  }
+}
+
+document.querySelector('.menu-toggle').addEventListener('click',function(){
+  const nav=document.querySelector('.main-nav');
+  nav.style.display=nav.style.display==='flex'?'none':'flex';
+});
+
+// ── SØK ──
+(function(){
+  const INDEX=[
+    {k:['om oss','hvem er','bakgrunn','grunnlegger','stiftet','historien'],l:'Om oss',fn:()=>{showPage('om-oss');}},
+    {k:['slik fungerer','fungerer det','prosess','steg','fremgangsmåte','hvordan'],l:'Slik fungerer det',fn:()=>{showPage('forside');gotoId('slik');}},
+    {k:['vannskade','vann','lekkasje','rør','oppvaskmaskin','vaskemaskin','fukt'],l:'Vannskade',fn:()=>{showPage('forside');gotoId('slik');}},
+    {k:['storm','stormskade','vind','tak','orkan'],l:'Stormskade',fn:()=>{showPage('forside');gotoId('slik');}},
+    {k:['elektrisk','elektro','strøm','anlegg','overspenning'],l:'Elektrisk skade',fn:()=>{showPage('forside');gotoId('resultater');}},
+    {k:['eierskifte','selger','salgsoppgave','boligkjøp','kjøpte bolig','overtakelse'],l:'Eierskifteforsikring',fn:()=>{showPage('forside');gotoId('resultater');}},
+    {k:['resultat','saker','utbetaling','beløp','eksempel','case'],l:'Våre resultater',fn:()=>{showPage('forside');gotoId('resultater');}},
+    {k:['fullmakt','fullmakts','underskrift','signatur','bemyndige','oppdrag'],l:'Fullmaktsskjema',fn:()=>{window.location.href='fullmakt.html';}},
+    {k:['kontakt','skjema','send inn','kontakte','sende inn','meld sak'],l:'Send inn saken',fn:()=>{showPage('forside');gotoId('kontakt');}},
+    {k:['betaling','pris','honorar','provisjon','gratis','kostnad','no cure'],l:'Pris og betaling',fn:()=>{showPage('forside');gotoId('slik');}},
+    {k:['faq','spørsmål','svar','vanlig spørsmål','spørsmål og svar'],l:'Vanlige spørsmål',fn:()=>{showPage('forside');gotoId('faq');}},
+    {k:['status','min sak','saksnummer','følge sak','finne sak'],l:'Finn saken din',fn:()=>{showPage('forside');gotoId('status-section');}},
+    {k:['personvern','gdpr','personopplysninger','privacy'],l:'Personvern',fn:()=>{showPage('personvern');}},
+  ];
+
+  const inp=document.getElementById('nav-search-input');
+  const res=document.getElementById('nav-search-results');
+  if(!inp||!res)return;
+
+  function runSearch(q){
+    q=q.toLowerCase().trim();
+    if(!q){res.classList.remove('visible');return;}
+    const hits=INDEX.filter(s=>s.k.some(k=>k.includes(q)||q.split(' ').some(w=>w.length>2&&k.includes(w))));
+    res.innerHTML='';
+    if(!hits.length){
+      const d=document.createElement('div');
+      d.className='search-no-result';
+      d.innerHTML='Fant ingen treff — <a href="#" onclick="showPage(\'forside\');gotoId(\'kontakt\');document.getElementById(\'nav-search-results\').classList.remove(\'visible\');return false;">kontakt oss direkte</a>';
+      res.appendChild(d);
+    } else {
+      const lbl=document.createElement('div');
+      lbl.className='search-result-label';
+      lbl.textContent='Gå til';
+      res.appendChild(lbl);
+      hits.slice(0,5).forEach(h=>{
+        const d=document.createElement('div');
+        d.className='search-result-item';
+        d.textContent=h.l;
+        d.addEventListener('mousedown',e=>{e.preventDefault();h.fn();res.classList.remove('visible');inp.value='';inp.classList.remove('open');});
+        res.appendChild(d);
+      });
+    }
+    res.classList.add('visible');
+  }
+
+  inp.addEventListener('focus',()=>inp.classList.add('open'));
+  inp.addEventListener('blur',()=>{
+    setTimeout(()=>{res.classList.remove('visible');if(!inp.value)inp.classList.remove('open');},200);
+  });
+  inp.addEventListener('input',()=>runSearch(inp.value));
+  inp.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){res.classList.remove('visible');inp.blur();inp.value='';inp.classList.remove('open');}
+    if(e.key==='Enter'){
+      const first=res.querySelector('.search-result-item');
+      if(first)first.dispatchEvent(new MouseEvent('mousedown'));
+    }
+  });
+})();
+</script>
 </body>
 </html>

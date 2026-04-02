@@ -1,0 +1,14 @@
+# Miljøvariabler — aldri i git
+.env
+
+# Sensitiv konfigurasjon
+Cpanel.docx
+behandle.php
+admin.php
+auth.php
+login.php
+setup.sql
+
+# Backup-filer
+*.bak
+index_backup.html

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fullmaktsskjema — Skadekrav.no</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --navy:#0d1f2d;--amber:#d97706;--amber-mid:#f59e0b;--amber-light:#fef3c7;
+      --cream:#faf8f4;--warm:#f0ece4;--white:#fff;
+      --text:#1a1a1a;--text-mid:#4a4a4a;--text-muted:#7a7a7a;
+      --border:#e5e0d8;--green:#166534;--green-bg:#dcfce7;
+      --r:12px;--rl:20px;
+      --fd:'Fraunces',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;
+    }
+    body{font-family:var(--fb);color:var(--text);background:var(--cream);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+    /* HEADER */
+    .page-header{background:var(--navy);padding:20px 0;border-bottom:3px solid var(--amber)}
+    .header-inner{max-width:820px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-icon{width:32px;height:32px;background:var(--amber);border-radius:7px;display:flex;align-items:center;justify-content:center}
+    .logo-wm{font-family:var(--fd);font-size:17px;font-weight:600;color:var(--white)}
+    .print-btn{background:var(--amber);color:var(--white);border:none;padding:9px 20px;border-radius:8px;font-family:var(--fb);font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:7px}
+    .print-btn:hover{background:#b45309}
+
+    /* LAYOUT */
+    .page-wrap{max-width:820px;margin:36px auto 60px;padding:0 28px}
+    .doc-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--rl);box-shadow:0 4px 24px rgba(0,0,0,.07);overflow:hidden}
+
+    /* DOC HEADER */
+    .doc-title-bar{background:var(--navy);padding:32px 40px}
+    .doc-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-mid);margin-bottom:8px}
+    .doc-title{font-family:var(--fd);font-size:28px;font-weight:700;color:var(--white);line-height:1.2}
+    .doc-sub{font-size:14px;color:#94a3b8;margin-top:8px}
+
+    /* SECTIONS */
+    .doc-section{padding:28px 40px;border-bottom:1px solid var(--border)}
+    .doc-section:last-child{border-bottom:none}
+    .section-heading{font-family:var(--fd);font-size:14px;font-weight:600;color:var(--navy);letter-spacing:.04em;text-transform:uppercase;margin-bottom:18px;padding-bottom:8px;border-bottom:2px solid var(--amber-light)}
+
+    /* FORM FIELDS */
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+    .field-row.single{grid-template-columns:1fr}
+    .field-row.triple{grid-template-columns:1fr 1fr 1fr}
+    .field-group{display:flex;flex-direction:column;gap:5px}
+    .field-group label{font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:.03em;text-transform:uppercase}
+    .field-group input,.field-group textarea,.field-group select{
+      width:100%;padding:10px 13px;border:1.5px solid var(--border);border-radius:8px;
+      font-family:var(--fb);font-size:15px;color:var(--text);background:var(--white);
+      transition:border-color .15s
+    }
+    .field-group input:focus,.field-group textarea:focus{outline:none;border-color:var(--navy)}
+    .field-group textarea{resize:vertical;min-height:80px}
+    .field-hint{font-size:11px;color:var(--text-muted);margin-top:3px}
+
+    /* LEGAL TEXT */
+    .legal-box{background:var(--cream);border:1.5px solid var(--border);border-radius:var(--r);padding:24px 28px}
+    .legal-preamble{font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:16px}
+    .legal-preamble strong{color:var(--text)}
+    .legal-list{list-style:none;margin-bottom:16px}
+    .legal-list li{font-size:14px;color:var(--text-mid);line-height:1.7;padding:8px 0 8px 28px;position:relative;border-bottom:1px solid var(--border)}
+    .legal-list li:last-child{border-bottom:none}
+    .legal-list li::before{content:attr(data-n);position:absolute;left:0;top:8px;font-family:var(--fd);font-weight:700;color:var(--amber);font-size:15px}
+    .legal-closing{font-size:13px;color:var(--text-mid);line-height:1.7;padding-top:14px;border-top:1px solid var(--border)}
+    .legal-closing p{margin-bottom:8px}
+    .legal-closing p:last-child{margin-bottom:0}
+
+    /* SIGNATURE FIELDS */
+    .sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .sig-block{display:flex;flex-direction:column;gap:10px}
+    .sig-label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+    .sig-line{border-bottom:2px solid var(--navy);height:52px;position:relative}
+    .sig-line-hint{font-size:11px;color:var(--text-muted);margin-top:5px}
+    .sig-input{width:100%;padding:8px 0;border:none;border-bottom:1.5px solid var(--border);font-family:var(--fb);font-size:15px;background:transparent;outline:none}
+    .sig-input:focus{border-bottom-color:var(--navy)}
+
+    /* FOOTER NOTE */
+    .doc-footer{background:var(--cream);border-top:1px solid var(--border);padding:20px 40px;font-size:13px;color:var(--text-muted);line-height:1.65}
+    .doc-footer strong{color:var(--text)}
+
+    /* PAGE FOOTER */
+    .site-footer-bar{max-width:820px;margin:0 auto;padding:24px 28px;display:flex;justify-content:space-between;font-size:13px;color:var(--text-muted);flex-wrap:wrap;gap:8px}
+    .site-footer-bar a{color:var(--amber);text-decoration:none}
+
+    @media(max-width:600px){
+      .doc-title-bar,.doc-section{padding:22px 22px}
+      .doc-footer{padding:18px 22px}
+      .field-row,.field-row.triple,.sig-grid{grid-template-columns:1fr}
+      .header-inner{flex-direction:column;align-items:flex-start}
+    }
+
+    /* PRINT STYLES */
+    @media print{
+      body{background:white}
+      .page-header,.print-btn,.site-footer-bar{display:none}
+      .page-wrap{max-width:100%;margin:0;padding:0}
+      .doc-card{border:none;box-shadow:none;border-radius:0}
+      .doc-title-bar{background:white!important;-webkit-print-color-adjust:exact;color-adjust:exact;border-bottom:2px solid var(--navy);padding:18px 24px}
+      .doc-label{color:var(--amber)!important}
+      .doc-title{color:var(--navy)!important;font-size:22px}
+      .doc-sub{color:var(--text-mid)!important}
+      .doc-section{padding:16px 24px}
+      .section-heading{font-size:11px}
+      .field-group input,.field-group textarea{border-color:#ccc;padding:6px 8px}
+      .legal-box{background:#fafafa;border-color:#ddd}
+      .doc-footer{padding:14px 24px;border-top:1px solid #ccc}
+      .sig-line{height:44px}
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="white"/></svg></div>
+      <span class="logo-wm">skadekrav.no</span>
+    </a>
+    <button class="print-btn" onclick="window.print()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Skriv ut skjemaet
+    </button>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="doc-card">
+
+    <div class="doc-title-bar">
+      <div class="doc-label">Juridisk dokument</div>
+      <div class="doc-title">Fullmakt — Skadekrav.no</div>
+      <div class="doc-sub">Fyll ut feltene nedenfor, skriv ut og signer. Send signert kopi til kontakt@skadekrav.no.</div>
+    </div>
+
+    <!-- FULLMAKTSGIVER -->
+    <div class="doc-section">
+      <div class="section-heading">Del 1 — Fullmaktsgivers opplysninger</div>
+      <div class="field-row single">
+        <div class="field-group">
+          <label>Fullt navn</label>
+          <input type="text" placeholder="Ola Nordmann">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field-group">
+          <label>Fødselsnummer (11 siffer)</label>
+          <input type="text" inputmode="numeric" maxlength="11" placeholder="12345678901">
+          <span class="field-hint">Fødselsnummer brukes kun for identifikasjon i saken.</span>
+        </div>
+        <div class="field-group">
+          <label>Telefon</label>
+          <input type="tel" placeholder="900 00 000">
+        </div>
+      </div>
+      <div class="field-row single">
+        <div class="field-group">
+          <label>Adresse</label>
+          <input type="text" placeholder="Gateveien 1">
+        </div>
+      </div>
+      <div class="field-row triple">
+        <div class="field-group">
+          <label>Postnummer</label>
+          <input type="text" inputmode="numeric" maxlength="4" placeholder="0000">
+        </div>
+        <div class="field-group" style="grid-column:span 2">
+          <label>Poststed</label>
+          <input type="text" placeholder="Oslo">
+        </div>
+      </div>
+      <div class="field-row single">
+        <div class="field-group">
+          <label>E-postadresse</label>
+          <input type="email" placeholder="ola@example.com">
+        </div>
+      </div>
+    </div>
+
+    <!-- SAKEN GJELDER -->
+    <div class="doc-section">
+      <div class="section-heading">Del 2 — Saken gjelder</div>
+      <div class="field-row single">
+        <div class="field-group">
+          <label>Adresse på skadestedet</label>
+          <input type="text" placeholder="Samme som over, eller annen adresse">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field-group">
+          <label>Forsikringsselskap</label>
+          <input type="text" placeholder="F.eks. Gjensidige, If, Tryg …">
+        </div>
+        <div class="field-group">
+          <label>Saksnummer / polisenummer (hvis kjent)</label>
+          <input type="text" placeholder="Valgfritt">
+        </div>
+      </div>
+      <div class="field-row single">
+        <div class="field-group">
+          <label>Kort beskrivelse av skaden</label>
+          <textarea placeholder="Beskriv hva som skjedde, hvilken skade som oppstod og hva forsikringen eventuelt har tilbudt."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- FULLMAKTSTEKST -->
+    <div class="doc-section">
+      <div class="section-heading">Del 3 — Fullmaktstekst</div>
+      <div class="legal-box">
+        <p class="legal-preamble">
+          Undertegnede <strong>(jf. navn angitt i del 1)</strong> (heretter «Fullmaktsgiver») gir herved
+          <strong>Skadekrav.no v/ Hans Ivar Løvold, org.nr. [FYLL INN]</strong>,
+          (heretter «Fullmektig») fullmakt til på mine vegne å:
+        </p>
+        <ol class="legal-list">
+          <li data-n="1.">Innhente alle opplysninger og dokumenter knyttet til ovennevnte forsikringssak, herunder korrespondanse, skaderapporter, takstrapporter og vedtak.</li>
+          <li data-n="2.">Kommunisere med forsikringsselskapet, Finansklagenemnda og andre relevante instanser på mine vegne.</li>
+          <li data-n="3.">Fremme krav, klage på vedtak og forhandle om oppgjør i tilknytning til ovennevnte skade.</li>
+          <li data-n="4.">Motta og kvittere for korrespondanse i saken.</li>
+        </ol>
+        <div class="legal-closing">
+          <p>Fullmakten gjelder <strong>ikke</strong> inngåelse av forlik eller aksept av tilbud uten at Fullmaktsgiver er informert og har gitt skriftlig samtykke til dette.</p>
+          <p>Fullmakten er gyldig fra signaturdato og gjelder inntil saken er avsluttet, eller til den trekkes tilbake skriftlig.</p>
+          <p>Fullmektigs honorar er avtalt til <strong>30 % av det beløp som utbetales ut over forsikringsselskapets første tilbud</strong>, i henhold til separat oppdragsavtale. Ingen betaling ved null resultat (no cure no pay).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNATUR -->
+    <div class="doc-section">
+      <div class="section-heading">Del 4 — Signatur</div>
+      <p style="font-size:14px;color:var(--text-muted);margin-bottom:22px">Skriv ut dette skjemaet og signer for hånd i feltene nedenfor.</p>
+      <div class="sig-grid">
+        <div class="sig-block">
+          <div class="sig-label">Sted og dato</div>
+          <input class="sig-input" type="text" placeholder="Oslo, 01.01.2026">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="sig-label">Underskrift fullmaktsgiver</div>
+          <div class="sig-line"></div>
+          <div class="sig-line-hint">Håndskrevet signatur — skriv ut og signer</div>
+        </div>
+      </div>
+      <div style="margin-top:22px">
+        <div class="sig-label" style="margin-bottom:8px">Navn med blokkbokstaver</div>
+        <input class="sig-input" type="text" placeholder="OLA NORDMANN" style="text-transform:uppercase;letter-spacing:.04em">
+      </div>
+    </div>
+
+    <!-- FOOTER NOTE -->
+    <div class="doc-footer">
+      <strong>Slik sender du inn:</strong> Skjemaet skrives ut, signeres og sendes som bilde eller scan til
+      <a href="mailto:kontakt@skadekrav.no" style="color:var(--amber);font-weight:600">kontakt@skadekrav.no</a>
+      — eller per post til <em>[adresse fylles inn]</em>.
+      Ta vare på en kopi selv.
+    </div>
+
+  </div>
+</div>
+
+<div class="site-footer-bar">
+  <span>© 2026 Skadekrav.no — Vi er ikke advokater og tilbyr ikke juridisk rådgivning</span>
+  <span><a href="index.html">Tilbake til forsiden</a> · <a href="index.html" onclick="event.preventDefault();history.back()">Personvern</a></span>
+</div>
+
+</body>
+</html>
